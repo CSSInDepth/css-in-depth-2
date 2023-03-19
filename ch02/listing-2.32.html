@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <head>
   <style>
     :root {
@@ -9,6 +9,14 @@
 
     body {
       font-family: Helvetica, Arial, sans-serif;
+    }
+
+    .dark {
+      margin-top: 2em;
+      padding: 1em;
+      background-color: #999;
+      --main-bg: #333;
+      --main-color: #fff;
     }
 
     .panel {
@@ -37,10 +45,9 @@
   <div class="panel">
     <h2>Single-origin</h2>
     <div class="body">
-      We have built partnerships with small farms
-      around the world to hand-select beans at the
-      peak of season. We then carefully roast in
-      small batches to maximize their potential.
+      We have built partnerships with small farms around the world to
+      hand-select beans at the peak of season. We then carefully roast in small
+      batches to maximize their potential.
     </div>
   </div>
 
@@ -48,11 +55,19 @@
     <div class="panel">
       <h2>Single-origin</h2>
       <div class="body">
-        We have built partnerships with small farms
-        around the world to hand-select beans at the
-        peak of season. We then carefully roast in
+        We have built partnerships with small farms around the world to
+        hand-select beans at the peak of season. We then carefully roast in
         small batches to maximize their potential.
       </div>
     </div>
   </aside>
+
+  <script type="text/javascript">
+    const rootElement = document.documentElement;
+    const styles = getComputedStyle(rootElement);
+    const mainColor = styles.getPropertyValue('--main-bg');
+    console.log(String(mainColor).trim());
+
+    rootElement.style.setProperty('--main-bg', '#cdf');
+  </script>
 </body>
