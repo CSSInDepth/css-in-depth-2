@@ -1,14 +1,9 @@
-<!doctype html>
+<!DOCTYPE html>
 <head>
   <style>
     :root {
-      box-sizing: border-box;
-    }
-
-    *,
-    ::before,
-    ::after {
-      box-sizing: inherit;
+      --brand-color: #0072b0;
+      --column-width: 600px;
     }
 
     body {
@@ -16,53 +11,51 @@
       font-family: Helvetica, Arial, sans-serif;
     }
 
-    header {
+    .page-header {
       color: #fff;
-      background-color: #0072b0;
-      border-radius: .5em;
+      background-color: var(--brand-color);
+    }
+
+    .page-header h1 {
+      max-width: var(--column-width);
+      margin-inline: auto;
     }
 
     .container {
-      display: table;
-      width: 100%;
+      max-width: var(--column-width);
+      margin-inline: auto;
+      border: 1px dashed gray;
     }
 
-    .main {
-      display: table-cell;
-      width: 70%;
-      background-color: #fff;
-      border-radius: .5em;
+    .expanded-child {
+      margin-inline: -2em;
+      padding-inline: 2em;
+      background-color: #79b;
+      overflow: auto;
     }
-
-    .sidebar {
-      display: table-cell;
-      width: 30%;
-      margin-left: 1.5em;
-      padding: 1.5em;
-      background-color: #fff;
-      border-radius: .5em;
-    }
-
   </style>
 </head>
-
 <body>
-  <header>
+  <header class="page-header">
     <h1>Franklin Running Club</h1>
   </header>
   <div class="container">
-    <main class="main">
-      <h2>Come join us!</h2>
+    <h2>Come join us!</h2>
+    <p>
+      The <b>Franklin Running Club</b> meets at 6:00pm every Thursday at the
+      town square. Runs are three to five miles, at your own pace.
+    </p>
+    <div class="expanded-child">
       <p>
-        The Franklin Running club meets at 6:00pm every Thursday
-        at the town square. Runs are three to five miles, at your
-        own pace.
+        Negative margins expand this element outside its container. An equal
+        amount of padding brings the content into alignment with the content
+        above and below.
       </p>
-    </main>
-    <aside class="sidebar">
-      <div class="widget"></div>
-      <div class="widget"></div>
-      <div class="gizmo"></div>
-    </aside>
+    </div>
+    <p>
+      Join us while we train for the
+      <a href="/st-patricks">St. Patrick's Day 5k</a>. Don't forget to wear
+      green!
+    </p>
   </div>
 </body>

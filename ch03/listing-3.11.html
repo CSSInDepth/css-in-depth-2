@@ -1,14 +1,15 @@
-<!doctype html>
+<!DOCTYPE html>
 <head>
   <style>
-    :root {
+    *,
+    *::before,
+    *::after {
       box-sizing: border-box;
     }
 
-    *,
-    ::before,
-    ::after {
-      box-sizing: inherit;
+    :root {
+      --brand-color: #0072b0;
+      --column-width: 1080px;
     }
 
     body {
@@ -16,50 +17,55 @@
       font-family: Helvetica, Arial, sans-serif;
     }
 
-    header {
+    .page-header {
       color: #fff;
-      background-color: #0072b0;
-      border-radius: .5em;
+      background-color: var(--brand-color);
+    }
+
+    .page-header h1 {
+      max-inline-size: var(--column-width);
+      margin: 0 auto;
+      padding: 1em 1.5rem;
     }
 
     .container {
-      display: flex;
+      max-inline-size: var(--column-width);
+      margin-inline: auto;
     }
 
     .main {
-      width: 70%;
+      padding: 1em 1.5rem;
       background-color: #fff;
-      border-radius: .5em;
+      border-radius: 0.5em;
     }
 
-    .sidebar {
-      width: 30%;
-      padding: 1.5em;
-      margin-left: 1.5em;
+    .social-links {
+      padding: 1em 1.5rem;
       background-color: #fff;
-      border-radius: .5em;
+      border-radius: 0.5em;
     }
-
   </style>
 </head>
-
-<body>
-  <header>
+<body lang="en-US">
+  <header class="page-header">
     <h1>Franklin Running Club</h1>
   </header>
   <div class="container">
     <main class="main">
       <h2>Come join us!</h2>
       <p>
-        The Franklin Running club meets at 6:00pm every Thursday
-        at the town square. Runs are three to five miles, at your
-        own pace.
+        The <b>Franklin Running Club</b> meets at 6:00pm every Thursday at the
+        town square. Runs are three to five miles, at your own pace.
+      </p>
+      <p>
+        Join us while we train for the
+        <a href="/st-patricks">St. Patrick's Day 5k</a>. Don't forget to wear
+        green!
       </p>
     </main>
-    <aside class="sidebar">
-      <div class="widget"></div>
-      <div class="widget"></div>
-      <div class="gizmo"></div>
+    <aside class="social-links">
+      <a href="/mastodon" class="button-link">follow us on Mastodon</a>
+      <a href="/facebook" class="button-link">like us on Facebook</a>
     </aside>
   </div>
 </body>
