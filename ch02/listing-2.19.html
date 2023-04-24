@@ -1,41 +1,23 @@
-<!DOCTYPE html>
+<!doctype html>
 <head>
   <style>
     :root {
-      font-size: calc(0.5em + 1svw);
+      --main-font: Helvetica, Arial, sans-serif;
+      --brand-color: #369;
     }
 
-    body {
-      font-family: Helvetica, Arial, sans-serif;
-    }
-
-    .panel {
-      font-size: 1rem;
-      padding: 1em;
-      border: 1px solid #999;
-      border-radius: 0.5em;
-    }
-
-    .panel > h2 {
-      margin-top: 0;
-      font-size: 0.8em;
-      font-weight: bold;
-      text-transform: uppercase;
-    }
-
-    .panel.large {
-      font-size: 1.2em;
+    p {
+      font-family: var(--main-font);
+      color: var(--brand-color);
     }
   </style>
 </head>
 
 <body>
-  <div class="panel">
-    <h2>Single-origin</h2>
-    <div class="body">
-      We have built partnerships with small farms around the world to
-      hand-select beans at the peak of season. We then carefully roast in
-      <a href="/batch-size.html">small batches</a> to maximize their potential.
-    </div>
-  </div>
+  <p>
+    We have built partnerships with small farms around the world to
+    hand-select beans at the peak of season. We then carefully roast
+    in small batches to maximize their
+    potential.
+  </p>
 </body>
