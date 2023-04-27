@@ -8,16 +8,24 @@
         box-sizing: border-box;
       }
 
+      :root {
+        --gap-size: 1.5rem;
+      }
+
       body {
         background-color: #709b90;
         font-family: Helvetica, Arial, sans-serif;
+      }
+
+      .stack > * + * {
+        margin-block-start: 1.5em;
       }
 
       .container {
         display: grid;
         grid-template-columns: 2fr 1fr;
         grid-template-rows: repeat(4, auto);
-        gap: 1.5em;
+        gap: var(--gap-size);
         max-inline-size: 1080px;
         margin-inline: auto;
       }
@@ -52,25 +60,17 @@
         margin-top: 0;
       }
 
-      .tile * + * {
-        margin-top: 1.5em;
-      }
-
       .page-heading {
         margin: 0;
       }
 
       .site-nav {
         display: flex;
+        gap: var(--gap-size);
         margin: 0;
         padding: 0.5em;
         background-color: #5f4b44;
         list-style-type: none;
-        border-radius: 0.2em;
-      }
-
-      .site-nav > li {
-        margin-top: 0;
       }
 
       .site-nav > li > a {
@@ -81,12 +81,8 @@
         text-decoration: none;
       }
 
-      .site-nav > li + li {
-        margin-left: 1.5em;
-      }
-
       .site-nav > .nav-right {
-        margin-left: auto;
+        margin-inline-start: auto;
       }
 
       .login-form h3 {
@@ -97,14 +93,13 @@
         text-transform: uppercase;
       }
 
-      .login-form input:not([type='checkbox']):not([type='radio']) {
+      .login-form input:not([type="checkbox"]):not([type="radio"]) {
         display: block;
-        margin-top: 0;
         width: 100%;
       }
 
       .login-form button {
-        margin-top: 1em;
+        margin-block-start: 1em;
         border: 1px solid #cc6b5a;
         background-color: white;
         padding: 0.5em 1em;
@@ -120,10 +115,6 @@
         justify-content: center;
         align-items: center;
         line-height: 0.7;
-      }
-
-      .cost > span {
-        margin-top: 0;
       }
 
       .cost-currency {
