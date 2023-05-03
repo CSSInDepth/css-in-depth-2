@@ -1,14 +1,10 @@
-<!doctype html>
+<!DOCTYPE html>
 <head>
   <style>
-    :root {
-      box-sizing: border-box;
-    }
-
     *,
     ::before,
     ::after {
-      box-sizing: inherit;
+      box-sizing: border-box;
     }
 
     body {
@@ -16,49 +12,37 @@
       font-family: Helvetica, Arial, sans-serif;
     }
 
+    .portfolio {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      grid-auto-rows: 1fr;
+      gap: 1em;
+      grid-auto-flow: dense;
+    }
+
+    .portfolio .featured {
+      grid-row: span 2;
+      grid-column: span 2;
+    }
+
     .portfolio > figure {
-      display: inline-block;
-      max-width: 300px;
+      display: flex;
+      flex-direction: column;
       margin: 0;
     }
 
     .portfolio img {
-      width: 100%; /* UPDATED to fix layout in Chrome 76+ */
+      flex: 1;
       object-fit: cover;
+      max-inline-size: 100%;
     }
 
     .portfolio figcaption {
       padding: 0.3em 0.8em;
-      background-color: rgba(0, 0, 0, 0.5);
+      background-color: rgb(0 0 0 / 0.5);
       color: #fff;
       text-align: right;
     }
-
-    @supports (display: grid) {
-      .portfolio {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-        grid-auto-rows: 1fr;
-        grid-gap: 1em;
-        grid-auto-flow: dense;
-      }
-
-      .portfolio > figure {
-        display: flex;
-        flex-direction: column;
-        max-width: initial;
-      }
-
-      .portfolio img {
-        flex: 1;
-      }
-
-      .portfolio .featured {
-        grid-row: span 2;
-        grid-column: span 2;
-      }
-    }
-
   </style>
 </head>
 
