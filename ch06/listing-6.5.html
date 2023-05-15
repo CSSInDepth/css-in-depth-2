@@ -8,6 +8,10 @@
         margin: 0;
       }
 
+      body.no-scroll {
+        overflow: hidden;
+      }
+
       button,
       input {
         font: inherit;
@@ -36,7 +40,7 @@
       .container {
         width: 80%;
         max-inline-size: 1000px;
-        margin: 1em auto;
+        margin-inline: auto;
       }
 
       .modal {
@@ -60,6 +64,13 @@
         padding: 2em 3em;
         background-color: white;
         overflow: auto;
+      }
+
+      .modal-close {
+        position: absolute;
+        top: 0.3em;
+        right: 0.3em;
+        padding: 0.3em;
       }
     </style>
   </head>
@@ -101,11 +112,13 @@
       button.addEventListener("click", function (event) {
         event.preventDefault();
         modal.classList.add("is-open");
+        document.body.classList.add("no-scroll");
       });
 
       close.addEventListener("click", function (event) {
         event.preventDefault();
         modal.classList.remove("is-open");
+        document.body.classList.remove("no-scroll");
       });
     </script>
   </body>

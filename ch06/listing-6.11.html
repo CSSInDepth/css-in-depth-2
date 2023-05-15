@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <style>
+      body {
+        font-family: Helvetica, Arial, sans-serif;
+        min-height: 200vh;
+        margin: 0;
+      }
+
+      body.no-scroll {
+        overflow: hidden;
+      }
+
+      button,
+      input {
+        font: inherit;
+      }
+
+      button {
+        padding: 0.5em 0.7em;
+        border: 1px solid #8d8d8d;
+        background-color: #eee;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .top-banner {
+        padding: 0.5em;
+        background-color: #ffd698;
+        box-shadow: 0 1px 5px rgb(0 0 0 / 0.1);
+      }
+
+      .top-banner-inner {
+        width: 80%;
+        max-inline-size: 1000px;
+        margin-inline: auto;
+      }
+
+      .container {
+        width: 80%;
+        max-inline-size: 1000px;
+        margin: 1em auto;
+      }
+
+      .modal {
+        display: none;
+      }
+
+      .modal.is-open {
+        display: block;
+      }
+
+      .modal-backdrop {
+        position: fixed;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1;
+      }
+
+      .modal-body {
+        position: fixed;
+        inset-block: 3em;
+        inset-inline: 20%;
+        padding: 2em 3em;
+        background-color: white;
+        overflow: auto;
+        z-index: 2;
+      }
+
+      .modal-close {
+        position: absolute;
+        top: 0.3em;
+        right: 0.3em;
+        padding: 0.3em;
+        border: 0;
+        cursor: pointer;
+        font-size: 2em;
+        height: 1em;
+        width: 1em;
+        text-indent: 10em;
+        overflow: hidden;
+        background-color: transparent;
+      }
+
+      .modal-close::after {
+        position: absolute;
+        line-height: 0.5;
+        top: 0.2em;
+        left: 0.1em;
+        text-indent: 0;
+        content: "\00D7";
+      }
+
+      .dropdown {
+        display: inline-block;
+        position: relative;
+      }
+
+      .dropdown-toggle {
+        padding: 0.5em 2em 0.5em 1.5em;
+        border: 1px solid #ccc;
+        background-color: #eee;
+        border-radius: 0;
+      }
+
+      .dropdown-toggle::after {
+        content: "";
+        position: absolute;
+        right: 1em;
+        top: 0.9em;
+        border: 0.3em solid;
+        border-color: black transparent transparent;
+      }
+
+      .dropdown.is-open .dropdown-toggle::after {
+        top: 0.6em;
+        border-color: transparent transparent black;
+      }
+
+      .dropdown-menu {
+        display: none;
+        position: absolute;
+        left: 0;
+        top: 2.1em;
+        inline-size: max-content;
+        min-inline-size: 100%;
+        background-color: #eee;
+      }
+
+      .dropdown.is-open .dropdown-menu {
+        display: block;
+      }
+
+      .submenu {
+        padding-inline-start: 0;
+        margin: 0;
+        list-style-type: none;
+        border: 1px solid #999;
+      }
+
+      .submenu > li + li {
+        border-top: 1px solid #999;
+      }
+
+      .submenu > li > a {
+        display: block;
+        padding: 0.5em 1.5em;
+        background-color: #eee;
+        color: #369;
+        text-decoration: none;
+      }
+
+      .submenu > li > a:hover {
+        background-color: #fff;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="top-banner">
+      <div class="top-banner-inner">
+        <p>
+          Find out what's going on at Wombat Coffee each month. Sign up for our
+          newsletter:
+          <button type="button" id="open">Sign up</button>
+        </p>
+      </div>
+    </header>
+    <div class="modal" id="modal" role="dialog" aria-modal="true">
+      <div class="modal-backdrop"></div>
+      <div class="modal-body">
+        <button type="button" class="modal-close" id="close">close</button>
+        <h2>Wombat Newsletter</h2>
+        <p>Sign up for our monthly newsletter. No spam. We promise!</p>
+        <form>
+          <p>
+            <label for="email">Email address:</label>
+            <input type="text" name="email" />
+          </p>
+          <p><button type="submit">Submit</button></p>
+        </form>
+      </div>
+    </div>
+    <main class="container">
+      <nav>
+        <div class="dropdown" id="dropdown">
+          <button type="button" class="dropdown-toggle" id="dropdown-toggle">
+            Main Menu
+          </button>
+          <div class="dropdown-menu">
+            <ul class="submenu">
+              <li><a href="/">Home</a></li>
+              <li><a href="/coffees">Coffees</a></li>
+              <li><a href="/brewers">Brewers</a></li>
+              <li><a href="/specials">Specials</a></li>
+              <li><a href="/about">About us</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <h1>Wombat Coffee Roasters</h1>
+    </main>
+
+    <script type="text/javascript">
+      const button = document.getElementById("open");
+      const close = document.getElementById("close");
+      const modal = document.getElementById("modal");
+
+      button.addEventListener("click", function (event) {
+        modal.classList.add("is-open");
+        document.body.classList.add("no-scroll");
+      });
+
+      close.addEventListener("click", function (event) {
+        modal.classList.remove("is-open");
+        document.body.classList.remove("no-scroll");
+      });
+
+      const dropdownToggle = document.getElementById("dropdown-toggle");
+      const dropdown = document.getElementById("dropdown");
+
+      dropdownToggle.addEventListener("click", function (event) {
+        dropdown.classList.toggle("is-open");
+      });
+    </script>
+  </body>
+</html>
