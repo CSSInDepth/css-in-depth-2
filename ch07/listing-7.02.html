@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Wombat Coffee Roasters</title>
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      :root {
+        font-size: clamp(0.875, 0.5svw + 0.6em, 1.125em);
+      }
+
+      body {
+        margin: 0;
+        font-family: Helvetica, Arial, sans-serif;
+      }
+
+      a:link {
+        color: #1476b8;
+        font-weight: bold;
+        text-decoration: none;
+      }
+      a:visited {
+        color: #1430b8;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      a:active {
+        color: #b81414;
+      }
+
+      .page-header {
+        padding: 0.4em 1em;
+        background-color: #fff;
+      }
+
+      .title > h1 {
+        color: #333;
+        text-transform: uppercase;
+        font-size: 1.5rem;
+        margin-block: 0.2em;
+      }
+
+      .slogan {
+        color: #888;
+        font-size: 0.875em;
+        margin: 0;
+      }
+
+      .hero {
+        padding: 2em 1em;
+        text-align: center;
+        background-image: url(coffee-beans.jpg);
+        background-size: 100%;
+        color: #fff;
+        text-shadow: 0.1em 0.1em 0.3em #000;
+      }
+
+      main {
+        padding: 1em;
+      }
+
+      .subtitle {
+        margin-block: 1.5em;
+        font-size: 0.875rem;
+        text-transform: uppercase;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header id="header" class="page-header">
+      <div class="title">
+        <h1>Wombat Coffee Roasters</h1>
+        <div class="slogan">We love coffee</div>
+      </div>
+    </header>
+
+    <nav class="menu" id="main-menu">
+      <button class="menu-toggle" id="toggle-menu">toggle menu</button>
+      <div class="menu-dropdown">
+        <ul class="nav-menu">
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/shop.html">Shop</a></li>
+          <li><a href="/menu.html">Menu</a></li>
+          <li><a href="/brew.html">Brew</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <aside id="hero" class="hero">
+      Welcome to Wombat Coffee Roasters! We are passionate about our craft,
+      striving to bring you the best hand-crafted coffee in the city.
+    </aside>
+
+    <main class="main">
+      <section class="column">
+        <h2 class="subtitle">Single-origin</h2>
+        <p>
+          We have built partnerships with small farms around the world to
+          hand-select beans at the peak of season. We then carefully roast in
+          <a href="/batch-size.html">small batches</a>
+          to maximize their potential.
+        </p>
+      </section>
+      <section class="column">
+        <h2 class="subtitle">Blends</h2>
+        <p>
+          Our tasters have put together a selection of carefully balanced
+          blends. Our famous
+          <a href="/house-blend.html">house blend</a>
+          is available year round.
+        </p>
+      </section>
+      <section class="column">
+        <h2 class="subtitle">Brewing Equipment</h2>
+        <p>
+          We offer our favorite kettles, French presses, and pour-over cones.
+          Come to one of our <a href="/classes.html">brewing classes</a> to
+          learn how to brew the perfect pour-over cup.
+        </p>
+      </section>
+    </main>
+  </body>
+</html>
