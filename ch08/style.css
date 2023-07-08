@@ -1,0 +1,66 @@
+@layer reset, theme, base, layout, components, utilities, states;
+
+@layer reset {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: unset;
+  }
+
+  button,
+  input,
+  textarea,
+  select {
+    font: inherit;
+  }
+
+  img,
+  picture,
+  svg,
+  canvas {
+    display: block;
+    max-width: 100%;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer theme {
+  :root {
+    --theme-color: hsl(211, 50%, 40%);
+  }
+}
+
+@layer base {
+  :root {
+    font-size: clamp(0.875em, 0.5svw + 0.6em, 1.125em);
+  }
+
+  body {
+    font-family: Helvetica, Arial, sans-serif;
+    background-color: #eee;
+    color: black;
+  }
+
+  a:any-link {
+    color: var(--theme-color);
+  }
+
+  h1 {
+    font-family: Georgia, serif;
+    font-size: 2rem;
+  }
+}

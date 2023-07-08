@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <style>
+      @layer {
+        :root {
+          --brand-blue: #0063cc;
+        }
+
+        a:any-link {
+          color: var(--brand-blue);
+          font-weight: bold;
+        }
+      }
+
+      @layer {
+        .button {
+          display: inline-block;
+          padding: 0.5rem;
+          color: white;
+          background-color: var(--brand-blue);
+          font-weight: normal;
+          text-decoration: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <p><a href="#">normal link</a></p>
+    <p><a href="#" class="button">Button link</a></p>
+  </body>
+</html>

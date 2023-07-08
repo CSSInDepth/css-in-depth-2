@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <style>
+      @layer global, theme;
+
+      @layer global {
+        :root {
+          --brand-blue: #0063cc;
+        }
+
+        a:any-link {
+          color: var(--brand-blue);
+          font-weight: bold;
+        }
+      }
+
+      @layer theme {
+        .button {
+          display: inline-block;
+          padding: 0.5rem;
+          color: white;
+          background-color: var(--brand-blue);
+          font-weight: normal;
+          text-decoration: none;
+        }
+
+        .blog-content a:any-link {
+          display: revert-layer;
+          padding: revert-layer;
+          color: revert-layer;
+          background-color: revert-layer;
+          font-weight: revert-layer;
+          text-decoration: revert-layer;
+
+          /* or use all: */
+          all: revert-layer;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="blog-content">
+      <p><a class="button" href="#">normal link</a></p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <style>
+      @layer reset, theme, global, layout, components, utilities, state;
+
+      @layer reset {
+        *,
+        *::before,
+        *::after {
+          box-sizing: border-box;
+        }
+
+        body {
+          margin: unset;
+        }
+
+        button,
+        input,
+        textarea,
+        select {
+          font: inherit;
+        }
+
+        img,
+        picture,
+        svg,
+        canvas {
+          display: block;
+          max-width: 100%;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          *,
+          *::before,
+          *::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+            scroll-behavior: auto !important;
+          }
+        }
+      }
+
+      @layer theme {
+        :root {
+          --brand-color: #0063cc;
+          --background-color-1: #edf3fa;
+          --background-color-2: #c6cdd5;
+          --foreground-color-1: #39434d;
+          --foreground-color-2: #5a636d;
+          --font-main: "Helvetica Neue", "Nimbus Sans", Arial, sans-serif;
+          --font-heading: Georgia, sans-serif;
+
+          color-scheme: light;
+          accent-color: var(--brand-color);
+        }
+      }
+
+      @layer global {
+        :root {
+          font-size: clamp(1rem, 0.4rem + 0.8svw, 1.2rem);
+        }
+
+        body {
+          font-family: var(--font-main);
+          background-color: var(--background-color-1);
+          color: var(--foreground-color-2);
+        }
+
+        a:any-link {
+          color: var(--brand-color);
+        }
+
+        h1 {
+          font-family: var(--font-heading);
+          font-size: 2.2rem;
+        }
+
+        h2 {
+          font-size: 1.125rem;
+        }
+
+        @media (min-width: 768px) {
+          h1 {
+            font-size: 3rem;
+          }
+
+          h2 {
+            font-size: 2rem;
+          }
+        }
+      }
+
+      @layer layout {
+      }
+    </style>
+  </head>
+  <body>
+    <header id="page-header">
+      <h1>Example heading</h1>
+    </header>
+    <div class="l-main">
+      <main>
+        <form>
+          <label>
+            <input type="checkbox" />
+            A checkbox with the accent color
+          </label>
+        </form>
+      </main>
+      <aside>Sidebar contents</aside>
+    </div>
+  </body>
+</html>
