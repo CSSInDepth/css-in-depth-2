@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <style>
+      :root {
+        --brand-blue: #0063cc;
+      }
+
+      a:where(:any-link) {
+        color: var(--brand-blue);
+        font-weight: bold;
+      }
+
+      .button {
+        display: inline-block;
+        padding: 0.5rem;
+        color: white;
+        background-color: var(--brand-blue);
+        font-weight: normal;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <p><a href="#">normal link</a></p>
+    <p><a href="#" class="button">Button link</a></p>
+  </body>
+</html>

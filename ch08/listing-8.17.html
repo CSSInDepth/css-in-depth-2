@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      input {
+        @layer base {
+          font: inherit;
+          border: 2px solid #999;
+        }
+
+        @layer components {
+          padding: 5px 10px;
+
+          @supports selector(:user-invalid) {
+            border-color: green;
+
+            &:user-invalid {
+              border-color: red;
+            }
+          }
+        }
+      }
+    </style>
+  </head>
+  <body class="homepage">
+    <input type="input" required />
+  </body>
+</html>
