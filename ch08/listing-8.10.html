@@ -113,6 +113,58 @@
           margin-inline: auto;
         }
       }
+
+      @layer modules {
+        .nav-menu {
+          margin-block: unset;
+          padding-inline-start: unset;
+          border: 1px solid #ccc;
+          list-style: none;
+        }
+
+        .nav-menu > li + li {
+          border-top: 1px solid #ccc;
+        }
+
+        .nav-menu > li > a {
+          display: block;
+          padding: 0.8em 1em;
+          color: inherit;
+          font-weight: normal;
+        }
+
+        .nav-menu > li > a:hover {
+          color: var(--brand-color);
+          background-color: white;
+        }
+
+        .card {
+          padding: 1rem;
+          border-radius: 0.5rem;
+          background-color: #fff;
+        }
+
+        .card > h3 {
+          align-self: end;
+          margin-block: 0;
+          padding-block-end: 0.5rem;
+          border-block-end: 1px solid #eee;
+        }
+      }
+
+      @layer utilities {
+        .text-center {
+          text-align: center;
+        }
+
+        .hidden {
+          display: none;
+        }
+
+        .border-radius {
+          border-radius: 1rem;
+        }
+      }
     </style>
   </head>
   <body id="homepage">
@@ -120,9 +172,25 @@
       <h1>Example heading</h1>
     </header>
     <main class="l-main">
-      <p>Main page contents</p>
+      <div class="card">
+        <h3>Mark Twain</h3>
+        <div>
+          <p>
+            An American author famous for
+            <i>The Adventures of Tom Sawyer</i> and
+            <i>Adventures of Huckleberry Finn</i>. He has been called “the
+            father of American literature.”
+          </p>
+        </div>
+      </div>
     </main>
-    <aside>Sidebar content</aside>
-    <footer>Footer content</footer>
+    <aside>
+      <ul class="nav-menu">
+        <li><a href="/">Home</a></li>
+        <li><a href="/authors">Authors</a></li>
+        <li><a href="/about">About</a></li>
+      </ul>
+    </aside>
+    <footer class="text-center">Footer content</footer>
   </body>
 </html>
