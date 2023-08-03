@@ -1,0 +1,74 @@
+@layer reset, global, layout, modules, utilities;
+
+@layer reset {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: unset;
+  }
+
+  button,
+  input,
+  textarea,
+  select {
+    font: inherit;
+  }
+
+  img,
+  picture,
+  svg,
+  canvas {
+    display: block;
+    max-width: 100%;
+  }
+}
+
+@layer layout {
+  .l-page {
+    margin-inline: 1rem;
+  }
+
+  .l-page > main,
+  .l-page > aside {
+    container: layout / inline-size;
+  }
+
+  @media (min-width: 800px) {
+    .l-page {
+      display: grid;
+      grid-template-columns: 1fr 30%;
+    }
+  }
+}
+
+@layer modules {
+  .media {
+    display: grid;
+    gap: 1.5em;
+    padding: 1.5rem;
+    background-color: #eee;
+    border-radius: 0.5em;
+  }
+
+  .media__image {
+    margin-inline: auto;
+  }
+
+  .media__body {
+    container: layout / inline-size;
+  }
+
+  @container layout (min-width: 400px) {
+    .media {
+      grid-template-columns: 100px 1fr;
+    }
+
+    .media__image {
+      margin: 0;
+    }
+  }
+}

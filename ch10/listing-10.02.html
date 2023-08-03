@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      @layer reset, layout, modules;
+
+      @layer base {
+        img {
+          display: block;
+          max-width: 100%;
+        }
+      }
+
+      @layer layout {
+        .l-page {
+          margin-inline: 1rem;
+        }
+
+        @media (min-width: 800px) {
+          .l-page {
+            display: grid;
+            grid-template-columns: 1fr 30%;
+          }
+        }
+      }
+
+      @layer modules {
+        .media {
+          padding: 1.5rem;
+          background-color: #eee;
+          border-radius: 5px;
+        }
+
+        .media__image {
+          margin-inline: auto;
+        }
+
+        @media (min-width: 400px) {
+          .media {
+            display: flex;
+            gap: 1.5em;
+          }
+
+          .media__image {
+            align-self: start;
+            margin-inline: revert;
+          }
+        }
+      }
+    </style>
+  </head>
+  <body class="l-page">
+    <main>
+      <h1>Franklin Running Club</h1>
+    </main>
+    <aside>
+      <h3>Running tips</h3>
+      <div class="media">
+        <img class="media__image" src="runner.png" />
+        <div class="media__body">
+          <h4>Change it up</h4>
+          <p>
+            Don't run the same every time you hit the road. Vary your pace, and
+            vary the distance of your runs.
+          </p>
+        </div>
+      </div>
+    </aside>
+  </body>
+</html>
