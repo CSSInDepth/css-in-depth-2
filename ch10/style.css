@@ -62,7 +62,7 @@
     container: layout / inline-size;
   }
 
-  @container layout (min-width: 400px) {
+  @container layout (min-width: 450px) {
     .media {
       grid-template-columns: 100px 1fr;
     }
@@ -71,4 +71,8 @@
       margin: 0;
     }
   }
+}
+
+aside {
+  background-color: #efe;
 }

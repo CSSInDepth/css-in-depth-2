@@ -1,0 +1,102 @@
+@layer reset, layout, modules;
+
+@layer base {
+  img {
+    display: block;
+    max-width: 100%;
+  }
+}
+
+@layer layout {
+  .l-page {
+    margin-inline: 1rem;
+  }
+
+  .l-page > * {
+    container: layout / inline-size;
+  }
+
+  .l-page > aside {
+    --aside: true;
+  }
+
+  @media (min-width: 800px) {
+    .l-page {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: 1fr 30%;
+    }
+  }
+}
+
+@layer modules {
+  .media {
+    padding: 1.5rem;
+    background-color: #eee;
+    border-radius: 5px;
+  }
+
+  .media__image {
+    margin-inline: auto;
+  }
+
+  @container layout (width >= 450px) {
+    .media {
+      display: flex;
+      gap: 1.5em;
+    }
+
+    .media__image {
+      align-self: start;
+      margin-inline: revert;
+    }
+  }
+
+  .race-grid {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    grid-auto-rows: 1fr;
+    gap: 1rem;
+  }
+
+  .race-grid > :nth-child(3n - 1) {
+    grid-row: span 2;
+  }
+
+  .race-detail {
+    container: layout / inline-size;
+    border: 1px solid #ccc;
+  }
+
+  .race-detail > img {
+    inline-size: 100%;
+    max-block-size: 30cqi;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .race-detail__body {
+    padding: 1rem 1.5rem;
+  }
+
+  .race-detail__body > h3 {
+    font-size: clamp(1rem, 3.5cqi, 1.8rem);
+    font-family: Helvetica, sans-serif;
+  }
+
+  @container style(--aside: true) {
+    .race-detail {
+      margin-block: 1em;
+      color: #333;
+      display: flex;
+    }
+
+    .race-detail > img {
+      flex: 0 0 30cqi;
+    }
+
+    .race-detail__body > h3 {
+      margin-block-start: 0;
+    }
+  }
+}

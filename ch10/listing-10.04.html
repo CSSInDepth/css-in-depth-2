@@ -18,6 +18,10 @@
           margin-inline: 1rem;
         }
 
+        .l-page > * {
+          container: layout / inline-size;
+        }
+
         @media (min-width: 800px) {
           .l-page {
             display: grid;
@@ -38,7 +42,12 @@
           margin-inline: auto;
         }
 
-        @media (min-width: 450px) {
+        .media__body {
+          container: layout / inline-size;
+          flex-grow: 1;
+        }
+
+        @container layout (width >= 450px) {
           .media {
             display: flex;
             gap: 1.5em;

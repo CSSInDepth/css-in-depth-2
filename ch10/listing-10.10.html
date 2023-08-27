@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      @layer reset, layout, modules;
+
+      @layer base {
+        img {
+          display: block;
+          max-width: 100%;
+        }
+
+        :root {
+          --color-theme: light;
+        }
+        @media (prefers-color-scheme: dark) {
+          :root {
+            --color-theme: dark;
+          }
+        }
+        [data-theme="light"] {
+          --color-theme: light;
+        }
+        [data-theme="dark"] {
+          --color-theme: dark;
+        }
+
+        @container style(--color-theme: dark) {
+          body {
+            background-color: #555;
+            color: white;
+            color-scheme: dark;
+          }
+        }
+      }
+
+      @layer layout {
+        .l-page {
+          margin-inline: 1rem;
+        }
+
+        .l-page > * {
+          container: layout / inline-size;
+        }
+
+        .l-page > aside {
+          --sidebar: true;
+        }
+
+        @media (min-width: 800px) {
+          .l-page {
+            display: grid;
+            gap: 1rem;
+            grid-template-columns: 1fr 30%;
+          }
+        }
+      }
+
+      @layer modules {
+        .media {
+          padding: 1.5rem;
+          background-color: #eee;
+          border-radius: 5px;
+        }
+
+        .media__image {
+          margin-inline: auto;
+        }
+
+        .media__body {
+          container: layout / inline-size;
+          flex-grow: 1;
+        }
+
+        @container layout (width >= 450px) {
+          .media {
+            display: flex;
+            gap: 1.5em;
+          }
+
+          .media__image {
+            align-self: start;
+            margin-inline: revert;
+          }
+        }
+        @container style(--color-theme: dark) {
+          .media {
+            background-color: #5f5f5f;
+          }
+        }
+
+        .race-grid {
+          display: grid;
+          grid-template-columns: 2fr 3fr;
+          grid-auto-rows: 1fr;
+          gap: 1rem;
+        }
+
+        .race-grid > :nth-child(3n - 1) {
+          grid-row: span 2;
+        }
+
+        .race-detail {
+          container: layout / inline-size;
+          border: 1px solid #ccc;
+        }
+
+        @container style(--color-theme: dark) {
+          .race-detail {
+            background-color: #333;
+            color: #eee;
+          }
+        }
+
+        .race-detail > img {
+          inline-size: 100%;
+          max-block-size: 30cqi;
+          object-fit: cover;
+        }
+
+        .race-detail__body {
+          padding: 1rem 1.5rem;
+        }
+
+        .race-detail__body > h3 {
+          font-size: clamp(1rem, 3.5cqi, 1.8rem);
+          font-family: Helvetica, sans-serif;
+        }
+
+        @container style(--sidebar: true) {
+          .race-detail {
+            margin-block: 1em;
+            display: flex;
+          }
+
+          .race-detail > img {
+            flex: 0 0 30cqi;
+          }
+
+          .race-detail__body > h3 {
+            margin-block-start: 0;
+          }
+        }
+      }
+    </style>
+  </head>
+  <body class="l-page">
+    <main>
+      <h1>Franklin Running Club</h1>
+      <div class="race-grid">
+        <div class="race-detail">
+          <img src="race.jpg" />
+          <div class="race-detail__body">
+            <h3>Union County 10K</h3>
+            <p class="rate-detail__date">Saturday, April 14</p>
+          </div>
+        </div>
+        <div class="race-detail">
+          <img src="shoe.jpg" />
+          <div class="race-detail__body">
+            <h3>St. Patrick's Day 5K</h3>
+            <p class="rate-detail__date">Saturday, March 17</p>
+          </div>
+        </div>
+        <div class="race-detail">
+          <img src="runner-hill.jpg" />
+          <div class="race-detail__body">
+            <h3>2 mile uphill</h3>
+            <p class="rate-detail__date">Thursday, March 29</p>
+          </div>
+        </div>
+      </div>
+    </main>
+    <aside>
+      <h3>Running tips</h3>
+      <div class="media">
+        <img class="media__image" src="runner.png" />
+        <div class="media__body">
+          <h4>Change it up</h4>
+          <p>
+            Don't run the same every time you hit the road. Vary your pace, and
+            vary the distance of your runs.
+          </p>
+        </div>
+      </div>
+      <div class="race-detail">
+        <img src="race.jpg" />
+        <div class="race-detail__body">
+          <h3>Union County 10K</h3>
+          <p class="rate-detail__date">Saturday, April 14</p>
+        </div>
+      </div>
+    </aside>
+    <footer>
+      <button id="light-theme">Light mode</button>
+      <button id="dark-theme">Dark mode</button>
+    </footer>
+    <script type="text/javascript">
+      const lightThemeButton = document.getElementById("light-theme");
+      const darkThemeButton = document.getElementById("dark-theme");
+
+      lightThemeButton.addEventListener("click", () => {
+        document.documentElement.setAttribute("data-theme", "light");
+      });
+      darkThemeButton.addEventListener("click", () => {
+        document.documentElement.setAttribute("data-theme", "dark");
+      });
+    </script>
+  </body>
+</html>
