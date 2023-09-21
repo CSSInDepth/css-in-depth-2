@@ -32,15 +32,17 @@
       }
 
       @layer theme {
-        :root {
-          --brand-green: #076448;
-          --dark-green: #099268;
-          --medium-green: #20c997;
-          --text-color: #212529;
-          --gray: #868e96;
-          --light-gray: #f1f3f5;
-          --extra-light-gray: #f8f9fa;
-          --white: #fff;
+        html {
+          --brand-green: oklch(45% 0.09 165.4deg);
+          --dark-green: oklch(59% 0.12 164.1deg);
+          --medium-green: oklch(74% 0.15 166.4deg);
+          --text-color: oklch(26% 0.01 0deg);
+          --gray: oklch(64% 0.02 248deg);
+          --light-gray: oklch(96% 0.003 248deg);
+          --extra-light-gray: oklch(98% 0 0deg);
+          --white: oklch(100% 0 0deg);
+
+          --red: oklch(46% 0.63 342deg);
         }
       }
 
@@ -72,6 +74,115 @@
           color: var(--red);
         }
       }
+
+      @layer modules {
+        .nav-container {
+          background-color: var(--medium-green);
+        }
+        .nav-container__inner {
+          display: flex;
+          justify-content: space-between;
+          max-inline-size: 1080px;
+          margin-inline: auto;
+        }
+
+        .home-link {
+          color: var(--text-color);
+          font-size: 1.6rem;
+          font-family: Georgia, serif;
+          font-weight: bold;
+          text-decoration: none;
+        }
+
+        .top-nav {
+          display: flex;
+          list-style-type: none;
+        }
+        .top-nav a {
+          display: block;
+          padding: 0.3em 1.25em;
+          color: var(--white);
+          background: var(--brand-green);
+          text-decoration: none;
+          border-radius: 3px;
+        }
+        .top-nav a:hover {
+          background-color: var(--dark-green);
+        }
+        .top-nav__featured > a {
+          color: var(--brand-green);
+          background-color: var(--white);
+        }
+        .top-nav__featured > a:hover {
+          color: var(--medium-green);
+          background-color: var(--white);
+        }
+
+        .hero {
+          background: url(collaboration.jpg) no-repeat;
+          background-size: cover;
+          margin-block-end: 2.5rem;
+        }
+        .hero__inner {
+          max-inline-size: 1080px;
+          margin-inline: auto;
+          padding-block: 50px 200px;
+          text-align: end;
+        }
+        .hero h2 {
+          font-size: 1.95rem;
+        }
+
+        .button {
+          display: inline-block;
+          padding: 0.4em 1em;
+          color: var(--brand-green);
+          border: 2px solid var(--brand-green);
+          border-radius: 0.2em;
+          text-decoration: none;
+          font-size: 1rem;
+        }
+        .button:hover {
+          background-color: var(--dark-green);
+          color: var(--white);
+        }
+        .button--cta {
+          padding: 0.6em 1em;
+          background-color: var(--brand-green);
+          color: var(--white);
+          border: none;
+        }
+
+        .container {
+          margin-inline: auto;
+          max-inline-size: 1080px;
+        }
+
+        .tile-row {
+          display: flex;
+        }
+        .tile-row > * {
+          flex: 1;
+        }
+
+        .tile {
+          background-color: var(--white);
+          border-radius: 0.3em;
+        }
+
+        .page-footer {
+          margin-block-start: 3em;
+          padding-block: 1em;
+          background-color: var(--light-gray);
+          color: var(--gray);
+        }
+        .page-footer__inner {
+          margin-inline: auto;
+          max-inline-size: 1080px;
+          text-align: center;
+          font-size: 0.8rem;
+        }
+      }
     </style>
   </head>
   <body>
@@ -86,7 +197,6 @@
         </ul>
       </div>
     </nav>
-
     <div class="hero">
       <div class="hero__inner">
         <h2>Team collaboration done right</h2>

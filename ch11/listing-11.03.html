@@ -32,7 +32,7 @@
       }
 
       @layer theme {
-        html {
+        :root {
           --brand-green: #076448;
           --dark-green: #099268;
           --medium-green: #20c997;
@@ -69,6 +69,7 @@
           color: var(--brand-green);
         }
         a:active {
+          color: var(--red);
         }
       }
 
@@ -79,7 +80,7 @@
         .nav-container__inner {
           display: flex;
           justify-content: space-between;
-          max-width: 1080px;
+          max-inline-size: 1080px;
           margin-inline: auto;
         }
 
@@ -119,13 +120,15 @@
   </head>
   <body>
     <nav class="nav-container">
-      <ul class="top-nav">
-        <li class="top-nav__home"><a href="/">Ink</a></li>
-        <li><a href="/features">Features</a></li>
-        <li><a href="/pricing">Pricing</a></li>
-        <li><a href="/support">Support</a></li>
-        <li class="top-nav__featured"><a href="/login">Login</a></li>
-      </ul>
+      <div class="nav-container__inner">
+        <a class="home-link" href="/">Ink</a>
+        <ul class="top-nav">
+          <li><a href="/features">Features</a></li>
+          <li><a href="/pricing">Pricing</a></li>
+          <li><a href="/support">Support</a></li>
+          <li class="top-nav__featured"><a href="/login">Login</a></li>
+        </ul>
+      </div>
     </nav>
     <div class="hero">
       <div class="hero__inner">
