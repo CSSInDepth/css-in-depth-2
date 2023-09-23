@@ -1,81 +1,105 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    :root {
-      box-sizing: border-box;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      @layer reset, global, modules;
 
-    *,
-    *::before,
-    *::after {
-      box-sizing: inherit;
-    }
+      @layer reset {
+        *,
+        *::before,
+        *::after {
+          box-sizing: border-box;
+        }
 
-    body {
-      font-family: Helvetica, Arial, sans-serif;
-    }
+        body {
+          margin: unset;
+        }
 
-    .message {
-      padding: 0.8em 1.2em;
-      border-radius: 0.2em;
-      border: 1px solid #265559;
-      color: #265559;
-      background-color: #e0f0f2;
-    }
+        button,
+        input,
+        textarea,
+        select {
+          font: inherit;
+        }
 
-    .message--success {
-      color: #2f5926;
-      border-color: #2f5926;
-      background-color:  #cfe8c9;
-    }
+        img,
+        picture,
+        svg,
+        canvas {
+          display: block;
+          max-width: 100%;
+        }
+      }
 
-    .message--warning {
-      color: #594826;
-      border-color: #594826;
-      background-color:  #e8dec9;
-    }
+      @layer global {
+        body {
+          font-family: Helvetica, Arial, sans-serif;
+        }
+      }
 
-    .message--error {
-      color: #59262f;
-      border-color: #59262f;
-      background-color:  #e8c9cf;
-    }
+      @layer modules {
+        .message {
+          padding: 0.8em 1.2em;
+          border-radius: 0.2em;
+          border: 1px solid #265559;
+          color: #265559;
+          background-color: #e0f0f2;
+        }
 
-    .button {
-      padding: 0.5em 0.8em;
-      border: 1px solid #265559;
-      border-radius: 0.2em;
-      background-color: transparent;
-      font-size: 1rem;
-    }
+        .message--success {
+          color: #2f5926;
+          border-color: #2f5926;
+          background-color: #cfe8c9;
+        }
 
-    .button--success {
-      border-color: #cfe8c9;
-      color: #fff;
-      background-color: #2f5926;
-    }
+        .message--warning {
+          color: #594826;
+          border-color: #594826;
+          background-color: #e8dec9;
+        }
 
-    .button--danger {
-      border-color: #e8c9c9;
-      color: #fff;
-      background-color: #a92323;
-    }
+        .message--error {
+          color: #59262f;
+          border-color: #59262f;
+          background-color: #e8c9cf;
+        }
 
-    .button--small {
-      font-size: 0.8rem;
-    }
+        .button {
+          padding: 0.5em 0.8em;
+          border: 1px solid #265559;
+          border-radius: 0.2em;
+          background-color: transparent;
+          font-size: 1rem;
+        }
 
-    .button--large {
-      font-size: 1.2rem;
-    }
-  </style>
-</head>
+        .button--success {
+          border-color: #cfe8c9;
+          color: #fff;
+          background-color: #2f5926;
+        }
 
-<body>
-  <button class="button button--large">Read more</button>
-  <button class="button button--success">Save</button>
-  <button class="button button--danger button--small">Cancel</button>
-</body>
+        .button--danger {
+          border-color: #e8c9c9;
+          color: #fff;
+          background-color: #a92323;
+        }
+
+        .button--small {
+          font-size: 0.8rem;
+        }
+
+        .button--large {
+          font-size: 1.2rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <button class="button button--large">Read more</button>
+    <button class="button button--success">Save</button>
+    <button class="button button--danger button--small">Cancel</button>
+  </body>
+</html>
