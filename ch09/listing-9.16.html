@@ -40,46 +40,61 @@
       }
 
       @layer modules {
-        .media {
-          display: flex;
-          gap: 1.5em;
-          padding: 1.5rem;
-          background-color: #eee;
-          border-radius: 5px;
+        @scope (.media) {
+          :scope {
+            display: flex;
+            gap: 1.5em;
+            padding: 1.5rem;
+            background-color: #eee;
+            border-radius: 5px;
+          }
+
+          :scope.right {
+            flex-direction: row-reverse;
+          }
+
+          img {
+            align-self: start;
+          }
+
+          .body {
+            overflow: auto;
+            margin-block-start: 0;
+          }
+
+          h4 {
+            margin-block-start: 0;
+            color: #333;
+          }
         }
 
-        .media__image {
-          align-self: start;
-        }
+        @scope (.highlight-block) {
+          :scope {
+            padding: 1rem 1.5rem;
+            background-color: #b3cbe6;
+          }
 
-        .media__body {
-          overflow: auto;
-          margin-block-start: 0;
-        }
-
-        .media__body > h4 {
-          margin-block-start: 0;
-          color: #333;
-        }
-
-        /* restrict width for demo purposes */
-        .wrapper {
-          max-inline-size: 600px;
-          margin: 2em auto;
+          h1,
+          h2,
+          h3,
+          h4 {
+            color: #264b73;
+          }
         }
       }
     </style>
   </head>
 
   <body>
-    <div class="wrapper">
+    <div class="highlight-block">
+      <h4>Running tips</h4>
+      <p>
+        Here are some tips to stay healthy while training and improve your
+        running performance.
+      </p>
       <div class="media">
-        <img
-          class="media__image"
-          src="runner.png"
-          alt="Silhouette of a person running"
-        />
-        <div class="media__body">
+        <img src="runner.png" alt="Silhouette of a person running" />
+        <div class="body">
           <h4>Strength</h4>
           <p>
             Strength training is an important part of injury prevention. Focus

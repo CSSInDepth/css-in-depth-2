@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      @layer reset, global, modules;
+
+      @layer reset {
+        *,
+        *::before,
+        *::after {
+          box-sizing: border-box;
+        }
+
+        body {
+          margin: unset;
+        }
+
+        button,
+        input,
+        textarea,
+        select {
+          font: inherit;
+        }
+
+        img,
+        picture,
+        svg,
+        canvas {
+          display: block;
+          max-width: 100%;
+        }
+      }
+
+      @layer global {
+        body {
+          font-family: Helvetica, Arial, sans-serif;
+        }
+      }
+
+      @layer modules {
+        @scope (.dropdown) to (.drawer > *) {
+          :scope {
+            display: inline-block;
+            position: relative;
+          }
+
+          .toggle {
+            padding: 0.5em 2em 0.5em 1.5em;
+            border: 1px solid #ccc;
+            font-size: 1rem;
+            background-color: #eee;
+          }
+
+          .toggle::after {
+            content: "";
+            position: absolute;
+            right: 1em;
+            top: 1em;
+            border: 0.3em solid;
+            border-color: black transparent transparent;
+          }
+
+          .drawer {
+            display: none;
+            position: absolute;
+            left: 0;
+            top: 2.1em;
+            min-width: 100%;
+            background-color: #eee;
+          }
+
+          :scope.is-open .toggle::after {
+            top: 0.7em;
+            border-color: transparent transparent black;
+          }
+          :scope.is-open .drawer {
+            display: block;
+          }
+        }
+
+        @scope (.menu) {
+          :scope {
+            padding-inline-start: 0;
+            margin: 0;
+            list-style-type: none;
+            border: 1px solid #999;
+          }
+
+          li + li {
+            border-block-start: 1px solid #999;
+          }
+
+          a {
+            display: block;
+            padding: 0.5em 1.5em;
+            background-color: #eee;
+            color: #369;
+            text-decoration: none;
+          }
+
+          a:hover {
+            background-color: #fff;
+          }
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="dropdown">
+      <button class="toggle">Main Menu</button>
+      <div class="drawer">
+        <ul class="menu">
+          <li><a href="/">Home</a></li>
+          <li><a href="/coffees">Coffees</a></li>
+          <li><a href="/brewers">Brewers</a></li>
+          <li><a href="/specials">Specials</a></li>
+          <li><a href="/about">About us</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      (function () {
+        var toggle = document.querySelector(".toggle");
+        toggle.addEventListener("click", function (event) {
+          event.preventDefault();
+          var dropdown = event.target.parentNode;
+          dropdown.classList.toggle("is-open");
+        });
+      })();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      @layer reset, global, modules;
+
+      @layer reset {
+        *,
+        *::before,
+        *::after {
+          box-sizing: border-box;
+        }
+
+        body {
+          margin: unset;
+        }
+
+        button,
+        input,
+        textarea,
+        select {
+          font: inherit;
+        }
+
+        img,
+        picture,
+        svg,
+        canvas {
+          display: block;
+          max-width: 100%;
+        }
+      }
+
+      @layer global {
+        body {
+          font-family: Helvetica, Arial, sans-serif;
+        }
+      }
+
+      @layer modules {
+        @scope (.media) {
+          :scope {
+            display: flex;
+            gap: 1.5em;
+            padding: 1.5rem;
+            background-color: #eee;
+            border-radius: 5px;
+          }
+
+          :scope.right {
+            flex-direction: row-reverse;
+          }
+
+          img {
+            align-self: start;
+          }
+
+          .body {
+            overflow: auto;
+            margin-block-start: 0;
+          }
+
+          h4 {
+            margin-block-start: 0;
+            color: #333;
+          }
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="media">
+      <img src="runner.png" alt="Silhouette of a person running" />
+      <div class="body">
+        <h4>Strength</h4>
+        <p>
+          Strength training is an important part of injury prevention. Focus on
+          your core&mdash; especially your abs and glutes.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
