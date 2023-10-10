@@ -41,6 +41,8 @@
           --light-gray: oklch(96% 0.003 248deg);
           --extra-light-gray: oklch(98% 0 0deg);
           --white: oklch(100% 0 0deg);
+
+          --red: oklch(46% 0.63 342deg);
         }
       }
 
@@ -57,6 +59,10 @@
         h3,
         h4 {
           font-family: Georgia, serif;
+        }
+
+        p {
+          margin-block: 1.5em;
         }
 
         a {
@@ -82,6 +88,7 @@
           justify-content: space-between;
           max-inline-size: 1080px;
           margin-inline: auto;
+          padding: 0.625em 0;
         }
 
         .home-link {
@@ -95,6 +102,8 @@
         .top-nav {
           display: flex;
           list-style-type: none;
+          margin: unset;
+          gap: 0.625em;
         }
         .top-nav a {
           display: block;
@@ -123,11 +132,14 @@
         }
         .hero__inner {
           max-inline-size: 1080px;
+          min-block-size: 40svh;
           margin-inline: auto;
-          padding-block: 50px 200px;
+          padding-block: 89px;
+          padding-inline-end: 12.5em;
           text-align: end;
         }
         .hero h2 {
+          margin-block: 0 10px;
           font-size: 1.95rem;
         }
 
@@ -158,6 +170,7 @@
 
         .tile-row {
           display: flex;
+          gap: 25px;
         }
         .tile-row > * {
           flex: 1;
@@ -166,6 +179,10 @@
         .tile {
           background-color: var(--white);
           border-radius: 0.3em;
+          padding: 1.5625em;
+        }
+        .tile > h4 {
+          margin-block: 0 1.5em;
         }
 
         .page-footer {
@@ -179,6 +196,19 @@
           max-inline-size: 1080px;
           text-align: center;
           font-size: 0.8rem;
+        }
+
+        .tag-list {
+          list-style: none;
+          padding-inline-start: unset;
+        }
+        .tag-list > li {
+          display: inline;
+          padding: 0.3rem 0.5rem;
+          font-size: 0.8rem;
+          border-radius: 0.2rem;
+          background-color: var(--light-gray);
+          line-height: 2.6;
         }
       }
     </style>
