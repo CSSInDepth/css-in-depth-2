@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Sansita:wght@800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      @layer reset, theme, global, layout, modules, utility;
+
+      @layer reset {
+        *,
+        *::before,
+        *::after {
+          box-sizing: border-box;
+        }
+
+        body {
+          margin: unset;
+        }
+
+        button,
+        input,
+        textarea,
+        select {
+          font: inherit;
+        }
+
+        img,
+        picture,
+        svg,
+        canvas {
+          display: block;
+          max-width: 100%;
+        }
+      }
+
+      @layer theme {
+        :root {
+          --brand-green: oklch(45% 0.09 165.4deg);
+          --dark-green: oklch(59% 0.12 164.1deg);
+          --medium-green: oklch(74% 0.15 166.4deg);
+          --text-color: oklch(26% 0.01 0deg);
+          --gray: oklch(64% 0.02 248deg);
+          --light-gray: oklch(96% 0.003 248deg);
+          --extra-light-gray: oklch(98% 0 0deg);
+          --white: oklch(100% 0 0deg);
+
+          --red: oklch(46% 0.63 342deg);
+        }
+      }
+
+      @layer global {
+        body {
+          font-family: Roboto, sans-serif;
+          line-height: 1.4;
+          background-color: var(--extra-light-gray);
+          color: var(--text-color);
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+          font-family: Sansita, serif;
+        }
+
+        p {
+          margin-block: 1.5em;
+        }
+
+        a {
+          color: var(--medium-green);
+        }
+        a:visited {
+          color: var(--brand-green);
+        }
+        a:hover {
+          color: var(--brand-green);
+        }
+        a:active {
+          color: var(--red);
+        }
+      }
+
+      @layer modules {
+        .nav-container {
+          background-color: var(--medium-green);
+        }
+        .nav-container__inner {
+          display: flex;
+          justify-content: space-between;
+          max-inline-size: 1080px;
+          margin-inline: auto;
+          padding: 0.625em 0;
+        }
+
+        .home-link {
+          color: var(--text-color);
+          font-size: 1.6rem;
+          font-family: Sansita, serif;
+          font-weight: bold;
+          text-decoration: none;
+        }
+
+        .top-nav {
+          display: flex;
+          list-style-type: none;
+          margin: unset;
+          gap: 0.625em;
+        }
+        .top-nav a {
+          display: block;
+          padding: 0.3em 1.25em;
+          color: var(--white);
+          background: var(--brand-green);
+          text-decoration: none;
+          border-radius: 3px;
+        }
+        .top-nav a:hover {
+          background-color: var(--dark-green);
+        }
+        .top-nav__featured > a {
+          color: var(--brand-green);
+          background-color: var(--white);
+        }
+        .top-nav__featured > a:hover {
+          color: var(--medium-green);
+          background-color: var(--white);
+        }
+
+        .hero {
+          background: url(collaboration.jpg) no-repeat;
+          background-size: cover;
+          margin-block-end: 40px;
+        }
+        .hero__inner {
+          max-inline-size: 1080px;
+          min-block-size: 40svh;
+          margin-inline: auto;
+          padding-block: 89px;
+          padding-inline-end: 12.5em;
+          text-align: end;
+        }
+        .hero h2 {
+          margin-block: 0 10px;
+          font-size: 1.95rem;
+        }
+
+        .button {
+          display: inline-block;
+          padding: 0.4em 1em;
+          color: var(--brand-green);
+          border: 2px solid var(--brand-green);
+          border-radius: 0.2em;
+          text-decoration: none;
+          font-size: 1rem;
+        }
+        .button:hover {
+          background-color: var(--dark-green);
+          color: var(--white);
+        }
+        .button--cta {
+          padding: 0.6em 1em;
+          background-color: var(--brand-green);
+          color: var(--white);
+          border: none;
+        }
+
+        .container {
+          margin-inline: auto;
+          max-inline-size: 1080px;
+        }
+
+        .tile-row {
+          display: flex;
+          gap: 25px;
+        }
+        .tile-row > * {
+          flex: 1;
+        }
+
+        .tile {
+          background-color: var(--white);
+          border-radius: 0.3em;
+          padding: 1.5625em;
+        }
+        .tile > h4 {
+          margin-block: 0 1.5em;
+        }
+
+        .page-footer {
+          margin-block-start: 3em;
+          padding-block: 1em;
+          background-color: var(--light-gray);
+          color: var(--gray);
+        }
+        .page-footer__inner {
+          margin-inline: auto;
+          max-inline-size: 1080px;
+          text-align: center;
+          font-size: 0.8rem;
+        }
+
+        .tag-list {
+          list-style: none;
+          padding-inline-start: unset;
+        }
+        .tag-list > li {
+          display: inline;
+          padding: 0.3rem 0.5rem;
+          font-size: 0.8rem;
+          border-radius: 0.2rem;
+          background-color: var(--light-gray);
+          line-height: 2.6;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="nav-container">
+      <div class="nav-container__inner">
+        <a class="home-link" href="/">Ink</a>
+        <ul class="top-nav">
+          <li><a href="/features">Features</a></li>
+          <li><a href="/pricing">Pricing</a></li>
+          <li><a href="/support">Support</a></li>
+          <li class="top-nav__featured"><a href="/login">Login</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="hero">
+      <div class="hero__inner">
+        <h2>Team collaboration done right</h2>
+        <a href="/sign-up" class="button button--cta">Get started</a>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="tile-row">
+        <div class="tile">
+          <h4>Work together, even if you're apart</h4>
+          <p>
+            Organize your team conversations into threads. Collaborate together
+            on documents in real-time. Use face-to-face
+            <a href="/features/video-calling">video calls</a> when typing just
+            won't do.
+          </p>
+          <a href="/collaboration" class="button">Read more</a>
+        </div>
+
+        <div class="tile">
+          <h4>Take it with you</h4>
+          <p>
+            Ink is available on a wide array of devices, so you can work from
+            anywhere:
+          </p>
+          <ul class="tag-list">
+            <li>Web</li>
+            <li>iOS</li>
+            <li>Android</li>
+            <li>Windows Phone</li>
+          </ul>
+          <a href="/supported-devices" class="button">Read more</a>
+        </div>
+
+        <div class="tile">
+          <h4>Priced right</h4>
+          <p>
+            Whether you work on a team of three or a three hundred, you'll find
+            our tiered pricing reasonable at every level.
+          </p>
+          <a href="/pricing" class="button">Read more</a>
+        </div>
+      </div>
+    </div>
+
+    <footer class="page-footer">
+      <div class="page-footer__inner">Copyright &copy; 2024 Ink, Inc.</div>
+    </footer>
+  </body>
+</html>
