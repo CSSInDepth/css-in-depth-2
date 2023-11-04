@@ -4,9 +4,14 @@
     <meta charset="UTF-8" />
     <style type="text/css">
       .fade {
-        height: 200px;
+        height: 1em;
         width: 400px;
-        background-image: conic-gradient(white, blue);
+        background-image: repeating-linear-gradient(
+          -45deg,
+          oklch(60% 0.1 257deg) 0px 10px,
+          oklch(40% 0.1 257deg) 10px 20px
+        );
+        border-radius: 0.3em;
       }
     </style>
   </head>
