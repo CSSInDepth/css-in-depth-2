@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      @layer reset {
+        body {
+          margin: unset;
+        }
+      }
+      body {
+        font-family: Helvetic, Arial, sans-serif;
+      }
+
+      .box {
+        background-image: url(images/bird.jpg);
+        background-size: cover;
+        background-position: center 30%;
+        padding: 30px;
+      }
+
+      .box__content {
+        max-inline-size: 500px;
+        margin-inline: auto;
+        padding: 50px 30px 70px;
+        border-radius: 10px;
+        background-color: oklch(100% none none / 0.3);
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <div class="box__content">
+        <h1>Common Kingfisher</h1>
+        <p>
+          The Common Kingfisher is a bird native found in Europe, Asia, and
+          north Africa. It has bright blue plumage with an orange belly.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

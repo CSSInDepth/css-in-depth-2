@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      @layer reset {
+        body {
+          margin: unset;
+        }
+      }
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+
+      .gallery:hover img {
+        filter: blur(1px) grayscale(35%);
+      }
+
+      .gallery img:hover {
+        filter: none;
+      }
+
+      .gallery img {
+        transition: filter 1s;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="gallery">
+      <img
+        src="images/bird.jpg"
+        alt="Blue and orange bird perched on a branch"
+        width="568"
+        height="379"
+      />
+      <img
+        src="images/bird.jpg"
+        alt="Blue and orange bird perched on a branch"
+        width="568"
+        height="379"
+      />
+      <img
+        src="images/bird.jpg"
+        alt="Blue and orange bird perched on a branch"
+        width="568"
+        height="379"
+      />
+      <img
+        src="images/bird.jpg"
+        alt="Blue and orange bird perched on a branch"
+        width="568"
+        height="379"
+      />
+      <img
+        src="images/bird.jpg"
+        alt="Blue and orange bird perched on a branch"
+        width="568"
+        height="379"
+      />
+      <img
+        src="images/bird.jpg"
+        alt="Blue and orange bird perched on a branch"
+        width="568"
+        height="379"
+      />
+    </div>
+  </body>
+</html>
