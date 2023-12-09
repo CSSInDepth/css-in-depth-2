@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      @layer reset {
+        * {
+          box-sizing: border-box;
+        }
+
+        body {
+          margin: unset;
+        }
+
+        img {
+          display: block;
+        }
+      }
+
+      .poem-image {
+        float: left;
+        margin-right: 15px;
+        shape-outside: margin-box;
+        border-radius: 50%;
+      }
+
+      .poem-image > img {
+        height: 350px;
+        width: 350px;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <div class="poem-image">
+        <img src="images/eagle.jpg" alt="Golden Eagle" />
+      </div>
+      <h1>Hope is the thing with feathers</h1>
+      <p><cite>Emily Dickinson</cite></p>
+      <p>
+        “Hope” is the thing with feathers<br />
+        That perches in the soul,<br />
+        And sings the tune without the words,<br />
+        And never stops at all,
+      </p>
+      <p>
+        And sweetest in the Gale is heard;<br />
+        And sore must be the storm<br />
+        That could abash the little bird<br />
+        That kept so many warm.
+      </p>
+      <p>
+        I’ve heard it in the chillest land,<br />
+        And on the strangest sea;<br />
+        Yet, never, in extremity,<br />
+        It asked a crumb of me.
+      </p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      @layer reset {
+        body {
+          margin: unset;
+        }
+      }
+
+      .mask {
+        width: 300px;
+        min-height: 300px;
+        background-image: url(images/bird.jpg);
+        background-size: cover;
+        background-position: 100%;
+        -webkit-mask-image: linear-gradient(to bottom, black, white);
+        mask-image: linear-gradient(to bottom, black, white);
+        mask-mode: luminance;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="mask"></div>
+  </body>
+</html>
