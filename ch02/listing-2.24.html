@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <head>
   <style>
     :root {
@@ -65,9 +65,9 @@
   <script type="text/javascript">
     const rootElement = document.documentElement;
     const styles = getComputedStyle(rootElement);
-    const mainColor = styles.getPropertyValue('--main-bg');
+    const mainColor = styles.getPropertyValue("--main-bg");
     console.log(String(mainColor).trim());
 
-    rootElement.style.setProperty('--main-bg', '#cdf');
+    rootElement.style.setProperty("--main-bg", "#cdf");
   </script>
 </body>
