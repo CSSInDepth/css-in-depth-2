@@ -226,6 +226,14 @@
         }
       }
     </style>
+    <script type="module">
+      var button = document.getElementById("toggle-menu");
+      button.addEventListener("click", function (event) {
+        event.preventDefault();
+        var menu = document.getElementById("main-menu");
+        menu.classList.toggle("is-open");
+      });
+    </script>
   </head>
 
   <body>
@@ -281,15 +289,5 @@
         </p>
       </section>
     </main>
-    <script type="text/javascript">
-      (function () {
-        var button = document.getElementById("toggle-menu");
-        button.addEventListener("click", function (event) {
-          event.preventDefault();
-          var menu = document.getElementById("main-menu");
-          menu.classList.toggle("is-open");
-        });
-      })();
-    </script>
   </body>
 </html>
