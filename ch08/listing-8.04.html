@@ -2,46 +2,47 @@
 <html lang="en-US">
   <head>
     <style>
-      @layer global, theme;
+      @layer reset, theme, global, layout, modules, utilities, state;
 
-      @layer global {
-        :root {
-          --brand-blue: #0063cc;
+      @layer reset {
+        *,
+        *::before,
+        *::after {
+          box-sizing: border-box;
         }
 
-        a:any-link {
-          color: var(--brand-blue);
-          font-weight: bold;
-        }
-      }
-
-      @layer theme {
-        .button {
-          display: inline-block;
-          padding: 0.5rem;
-          color: white;
-          background-color: var(--brand-blue);
-          font-weight: normal;
-          text-decoration: none;
+        body {
+          margin: unset;
         }
 
-        .blog-content a:any-link {
-          display: revert-layer;
-          padding: revert-layer;
-          color: revert-layer;
-          background-color: revert-layer;
-          font-weight: revert-layer;
-          text-decoration: revert-layer;
+        button,
+        input,
+        textarea,
+        select {
+          font: inherit;
+        }
 
-          /* or use all: */
-          all: revert-layer;
+        img,
+        picture,
+        svg,
+        canvas {
+          display: block;
+          max-width: 100%;
+          height: auto;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          *,
+          *::before,
+          *::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+            scroll-behavior: auto !important;
+          }
         }
       }
     </style>
   </head>
-  <body>
-    <div class="blog-content">
-      <p><a class="button" href="#">normal link</a></p>
-    </div>
-  </body>
+  <body></body>
 </html>
