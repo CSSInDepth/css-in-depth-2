@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      @layer global, modules;
+
+      @layer global {
+        body {
+          font-family: Helvetica, Arial, sans-serif;
+        }
+      }
+
+      @layer modules {
+        .dropdown {
+          --border-color: oklch(61% 0.08 314deg);
+          --text-color: oklch(39% 0.06 314deg);
+          --text-color-focused: oklch(39% 0.2 314deg);
+          --background-color: white;
+          --highlight-color: oklch(95% 0.01 314deg);
+        }
+
+        .dropdown__toggle {
+          display: block;
+          padding: 0.5em 1em;
+          border: 1px solid var(--border-color);
+          color: var(--text-color);
+          background-color: var(--background-color);
+          font: inherit;
+          text-decoration: none;
+          transition: background-color 0.2s linear;
+        }
+        .dropdown__toggle:hover {
+          background-color: var(--highlight-color);
+        }
+        .dropdown__drawer {
+          position: absolute;
+          background-color: var(--background-color);
+          width: 10em;
+          height: 0;
+          overflow: hidden;
+          transition: height 0.2s ease-out;
+        }
+        .dropdown.is-open .dropdown__drawer {
+          height: auto;
+        }
+
+        .menu {
+          padding-left: 0;
+          margin: 0;
+          list-style: none;
+        }
+        .menu > li + li > a {
+          border-top: 0;
+        }
+        .menu > li > a {
+          display: block;
+          padding: 0.5em 1em;
+          color: var(--text-color);
+          background-color: var(--background-color);
+          text-decoration: none;
+          transition: all 0.2s linear;
+          border: 1px solid var(--border-color);
+        }
+        .menu > li > a:hover {
+          background-color: var(--highlight-color);
+          color: var(--text-color-focused);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="dropdown" aria-haspopup="true">
+      <button class="dropdown__toggle" type="button">Menu</button>
+      <div class="dropdown__drawer">
+        <ul class="menu" role="menu">
+          <li role="menuitem">
+            <a href="/features">Features</a>
+          </li>
+          <li role="menuitem">
+            <a href="/pricing">Pricing</a>
+          </li>
+          <li role="menuitem">
+            <a href="/support">Support</a>
+          </li>
+          <li role="menuitem">
+            <a href="/about">About</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <p><a href="/read-more">Read more</a></p>
+
+    <script type="module">
+      var toggle = document.getElementsByClassName("dropdown__toggle")[0];
+      var dropdown = toggle.parentElement;
+      var drawer = document.getElementsByClassName("dropdown__drawer")[0];
+      var height = drawer.scrollHeight;
+
+      toggle.addEventListener("click", function () {
+        dropdown.classList.toggle("is-open");
+        if (dropdown.classList.contains("is-open")) {
+          drawer.style.setProperty("height", height + "px");
+        } else {
+          drawer.style.setProperty("height", "0");
+        }
+      });
+    </script>
+  </body>
+</html>

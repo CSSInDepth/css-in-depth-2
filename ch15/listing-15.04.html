@@ -1,0 +1,29 @@
+<!DOCTYPE >
+<html lang="en">
+  <head>
+    <style>
+      .container {
+        position: relative;
+        height: 50px;
+      }
+
+      .box {
+        position: absolute;
+        left: 0;
+        height: 50px;
+        width: 50px;
+        background-color: oklch(70% 0.18 145deg);
+        transition: all 1s linear;
+      }
+
+      .container:hover .box {
+        left: 400px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box"></div>
+    </div>
+  </body>
+</html>
