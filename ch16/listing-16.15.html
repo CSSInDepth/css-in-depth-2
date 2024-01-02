@@ -2,17 +2,17 @@
 <html lang="en">
   <head>
     <style type="text/css">
-
       .row {
         display: flex;
+        gap: 4em;
         justify-content: center;
         perspective: 200px;
+        perspective-origin: left bottom;
       }
 
       .box {
         box-sizing: border-box;
         width: 150px;
-        margin: 0 2em;
         padding: 60px 0;
         text-align: center;
         background-color: hsl(150, 50%, 40%);
@@ -21,7 +21,6 @@
     </style>
   </head>
   <body>
-
     <div class="row">
       <div class="box">One</div>
       <div class="box">Two</div>

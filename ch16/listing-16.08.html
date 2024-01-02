@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <title>The Yolk Factory</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Raleway&display=fallback"
+      rel="stylesheet"
+    />
+    <style type="text/css">
+      @layer reset, theme, global, modules;
+
+      @layer reset {
+        *,
+        *::before,
+        *::after {
+          box-sizing: border-box;
+        }
+
+        body {
+          margin: unset;
+        }
+
+        img {
+          max-inline-size: 100%;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          *,
+          *::before,
+          *::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+            scroll-behavior: auto !important;
+          }
+        }
+      }
+
+      @layer theme {
+        :root {
+          --bg-color-1: oklch(47% 0.1 238deg);
+          --bg-color-2: oklch(32% 0.08 238deg);
+          --font-color: white;
+          --accent-yellow: oklch(87% 0.13 83deg);
+        }
+      }
+
+      @layer global {
+        body {
+          min-block-size: 100dvh;
+          background-color: var(--bg-color-1);
+          background-image: radial-gradient(
+            var(--bg-color-1),
+            var(--bg-color-2)
+          );
+          color: var(--font-color);
+          font-family: Raleway, Helvetica, Arial, sans-serif;
+          line-height: 1.4;
+        }
+
+        h1,
+        h2,
+        h3 {
+          font-family:
+            Alfa Slab One,
+            serif;
+          font-weight: 400;
+        }
+      }
+
+      @layer modules {
+        .page-header {
+          margin-block: unset;
+          padding: 1rem;
+        }
+
+        @media (min-width: 480px) {
+          .page-header {
+            padding: 2rem 2rem 3rem;
+          }
+        }
+
+        @media (min-width: 480px) {
+          .main-nav {
+            position: fixed;
+            top: 8.25rem;
+            left: 0;
+            z-index: 10;
+            background-color: transparent;
+            transition: background-color 0.5s linear;
+            border-top-right-radius: 0.5em;
+            border-bottom-right-radius: 0.5em;
+          }
+          .main-nav:hover,
+          .main-nav:focus-within {
+            background-color: rgb(0 0 0 / 0.6);
+          }
+        }
+
+        .nav-links {
+          display: flex;
+          justify-content: space-between;
+          gap: 0.8em;
+          margin-block: 0 1rem;
+          padding-inline: 1rem;
+          list-style: none;
+        }
+        .nav-links > li > a {
+          display: block;
+          padding-block: 0.8em;
+          color: white;
+          font-size: 0.8rem;
+          text-decoration: none;
+          text-transform: uppercase;
+          letter-spacing: 0.06em;
+        }
+        .nav-links__icon {
+          height: 1.5em;
+          width: 1.5em;
+          vertical-align: -0.2em;
+        }
+        .nav-links > li > a:hover,
+        .nav-links > li > a:focus {
+          color: var(--accent-yellow);
+        }
+
+        @media (min-width: 480px) {
+          .nav-links {
+            display: block;
+            padding: 1em;
+            margin-block-end: 0;
+          }
+          .nav-links__label {
+            margin-left: 1em;
+          }
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1 class="page-header">The Yolk Factory</h1>
+    </header>
+    <nav class="main-nav">
+      <ul class="nav-links">
+        <li>
+          <a href="/">
+            <img src="images/home.svg" class="nav-links__icon" />
+            <span class="nav-links__label">Home</span>
+          </a>
+        </li>
+        <li>
+          <a href="/events">
+            <img src="images/calendar.svg" class="nav-links__icon" />
+            <span class="nav-links__label">Events</span>
+          </a>
+        </li>
+        <li>
+          <a href="/members">
+            <img src="images/members.svg" class="nav-links__icon" />
+            <span class="nav-links__label">Members</span>
+          </a>
+        </li>
+        <li>
+          <a href="/about">
+            <img src="images/star.svg" class="nav-links__icon" />
+            <span class="nav-links__label">About</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </body>
+</html>
