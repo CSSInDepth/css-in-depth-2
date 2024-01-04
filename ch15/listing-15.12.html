@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      @property --hue {
+        syntax: "<angle>";
+        inherits: false;
+        initial-value: 0deg;
+      }
+
+      button {
+        padding: 0.5em 1em;
+        border: none;
+        color: white;
+        --hue: 314deg;
+        background-color: oklch(39% 0.1 var(--hue));
+        transition: --hue 0.5s linear;
+      }
+
+      button:hover {
+        --hue: 250deg;
+      }
+    </style>
+  </head>
+  <body>
+    <button type="button">Submit</button>
+  </body>
+</html>
