@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>The Yolk Factory</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Raleway&display=fallback"
+      rel="stylesheet"
+    />
+    <style type="text/css">
+      @layer reset, theme, global, modules;
+
+      @layer reset {
+        *,
+        *::before,
+        *::after {
+          box-sizing: border-box;
+        }
+
+        body {
+          margin: unset;
+        }
+
+        img {
+          max-inline-size: 100%;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          *,
+          *::before,
+          *::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+            scroll-behavior: auto !important;
+          }
+        }
+      }
+
+      @layer theme {
+        :root {
+          --bg-color-1: oklch(47% 0.1 238deg);
+          --bg-color-2: oklch(32% 0.08 238deg);
+          --font-color: white;
+          --accent-yellow: oklch(87% 0.13 83deg);
+        }
+      }
+
+      @layer global {
+        body {
+          min-block-size: 100dvh;
+          background-color: var(--bg-color-1);
+          background-image: radial-gradient(
+            var(--bg-color-1),
+            var(--bg-color-2)
+          );
+          color: var(--font-color);
+          font-family: Raleway, Helvetica, Arial, sans-serif;
+          line-height: 1.4;
+        }
+
+        h1,
+        h2,
+        h3 {
+          font-family:
+            Alfa Slab One,
+            serif;
+          font-weight: 400;
+        }
+      }
+
+      @layer modules {
+        .page-header {
+          margin-block: unset;
+          padding: 1rem;
+        }
+
+        @media (min-width: 480px) {
+          .page-header {
+            padding: 2rem 2rem 3rem;
+          }
+        }
+
+        @media (min-width: 480px) {
+          .main-nav {
+            position: fixed;
+            top: 8.25rem;
+            left: 0;
+            z-index: 10;
+            background-color: transparent;
+            transition: background-color 0.5s linear;
+            border-top-right-radius: 0.5em;
+            border-bottom-right-radius: 0.5em;
+          }
+          .main-nav:hover,
+          .main-nav:focus-within {
+            background-color: rgb(0 0 0 / 0.6);
+          }
+        }
+
+        .nav-links {
+          display: flex;
+          justify-content: space-between;
+          gap: 0.8em;
+          margin-block: 0 1rem;
+          padding-inline: 1rem;
+          list-style: none;
+        }
+        .nav-links > li > a {
+          display: block;
+          padding-block: 0.8em;
+          color: white;
+          font-size: 0.8rem;
+          text-decoration: none;
+          text-transform: uppercase;
+          letter-spacing: 0.06em;
+        }
+        .nav-links__icon {
+          height: 1.5em;
+          width: 1.5em;
+          vertical-align: -0.2em;
+        }
+        .nav-links > li > a:hover,
+        .nav-links > li > a:focus {
+          color: var(--accent-yellow);
+        }
+
+        @media (min-width: 480px) {
+          .nav-links {
+            display: block;
+            padding: 1em;
+            margin-block-end: 0;
+          }
+          .nav-links__label {
+            display: inline-block;
+            margin-left: 1em;
+            padding-right: 1em;
+            opacity: 0;
+            translate: -1em;
+            transition:
+              translate 0.4s cubic-bezier(0.2, 0.9, 0.3, 1.3),
+              opacity 0.4s linear;
+          }
+          .nav-links:hover .nav-links__label,
+          .nav-links:focus-within .nav-links__label {
+            opacity: 1;
+            translate: 0;
+          }
+          .nav-links > li:nth-child(2) .nav-links__label {
+            transition-delay: 0.1s;
+          }
+          .nav-links > li:nth-child(3) .nav-links__label {
+            transition-delay: 0.2s;
+          }
+          .nav-links > li:nth-child(4) .nav-links__label {
+            transition-delay: 0.3s;
+          }
+          .nav-links > li:nth-child(5) .nav-links__label {
+            transition-delay: 0.4s;
+          }
+
+          .nav-links__icon {
+            transition: scale 0.2s ease-out;
+          }
+
+          .nav-links a:hover > .nav-links__icon,
+          .nav-links a:focus > .nav-links__icon {
+            scale: 1.3;
+          }
+        }
+
+        .flyin-grid {
+          margin-inline: 1rem;
+        }
+
+        .card {
+          margin-block-end: 1em;
+          padding: 0.5em;
+          background-color: white;
+          color: oklch(32% 0.02 248deg);
+          box-shadow: 3px 8px 15px rgb(0 0 0 / 0.3);
+        }
+        .card > img {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1 class="page-header">The Yolk Factory</h1>
+    </header>
+    <nav class="main-nav">
+      <ul class="nav-links">
+        <li>
+          <a href="/">
+            <img src="images/home.svg" class="nav-links__icon" />
+            <span class="nav-links__label">Home</span>
+          </a>
+        </li>
+        <li>
+          <a href="/events">
+            <img src="images/calendar.svg" class="nav-links__icon" />
+            <span class="nav-links__label">Events</span>
+          </a>
+        </li>
+        <li>
+          <a href="/members">
+            <img src="images/members.svg" class="nav-links__icon" />
+            <span class="nav-links__label">Members</span>
+          </a>
+        </li>
+        <li>
+          <a href="/about">
+            <img src="images/star.svg" class="nav-links__icon" />
+            <span class="nav-links__label">About</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <main class="flyin-grid">
+      <div class="flyin-grid__item card">
+        <img src="images/chicken1.jpg" alt="a chicken" />
+        <h4>Mrs. Featherstone</h4>
+        <p>
+          She may be a bit frumpy, but Mrs Featherstone gets the job done. She
+          lays her largish cream-colored eggs on a daily basis. She is
+          gregarious to a fault.
+        </p>
+      </div>
+      <div class="flyin-grid__item card">
+        <img src="images/chicken2.jpg" alt="a chicken" />
+        <h4>Hen Solo</h4>
+        <p>
+          Though the most recent addition to our flock, Hen Solo is a fast
+          favorite among our laying brood.
+        </p>
+      </div>
+      <div class="flyin-grid__item card">
+        <img src="images/chicken3.jpg" alt="a chicken" />
+        <h4>Cluck Norris</h4>
+        <p>
+          Every brood has its brawler. Cluck Norris is our feistiest hen,
+          frequently picking fights with other hens about laying territory and
+          foraging space.
+        </p>
+      </div>
+      <div class="flyin-grid__item card">
+        <img src="images/chicken4.jpg" alt="a chicken" />
+        <h4>Peggy Schuyler</h4>
+        <p>
+          Peggy was our first and friendliest hen. She is the most likely to
+          greet visitors to the yard, and frequently to be found nesting in the
+          coop.
+        </p>
+      </div>
+    </main>
+  </body>
+</html>

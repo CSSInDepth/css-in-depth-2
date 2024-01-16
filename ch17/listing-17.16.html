@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      body {
+        margin: unset;
+        height: 200lvh;
+      }
+
+      .indicator {
+        position: fixed;
+        top: 15px;
+        right: 15px;
+        height: 50px;
+        width: 50px;
+        background-color: oklch(74% 0.08 260deg);
+        animation-name: spin;
+        animation-timeline: scroll();
+      }
+
+      @keyframes spin {
+        from {
+          rotate: 0deg;
+        }
+
+        to {
+          rotate: 360deg;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="indicator"></div>
+  </body>
+</html>
