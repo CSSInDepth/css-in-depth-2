@@ -1,16 +1,15 @@
 {
-  "name": "appendixB",
+  "name": "appendixb",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "dependencies": {},
-  "devDependencies": {
-    "node-sass": "^4.5.3"
-  },
   "scripts": {
     "sass": "sass sass/index.scss build/styles.css"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.69.7"
+  }
 }

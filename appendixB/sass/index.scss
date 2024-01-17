@@ -1,4 +1,7 @@
-/* B.2 */
+/* listing B.7 */
+@use "button";
+
+/* listing B.2 */
 $brand-blue: #0086b3;
 
 a:link {
@@ -10,35 +13,32 @@ a:link {
   color: $brand-blue;
 }
 
-
-/* B.3 */
+/* listing B.3 */
 $padding-left: 3em;
 
 .note-author {
-  left-padding: $padding-left;
+  padding-left: $padding-left;
   font-weight: bold;
 }
 
 .note-body {
-  left-padding: $padding-left % 2;
+  padding-left: $padding-left % 2;
 }
 
-
-/* B.4 */
+/* listing B.4 */
 .site-nav {
   display: flex;
 
   > li {
     margin-top: 0;
 
-    &.is-active{
+    &.is-active {
       font-weight: bold;
     }
   }
 }
 
-
-/* B.5 */
+/* listing B.5 */
 html {
   font-size: 1rem;
 
@@ -47,30 +47,18 @@ html {
   }
 }
 
-
-/* B.7 */
-@import "button";
-
-
-/* B.8 */
-@mixin clearfix {
-  &::before {
-    display: table;
-    content: " ";
-  }
-
-  &::after {
-    clear: both;
-  }
+/* listing B.8 */
+@mixin box {
+  border-radius: 5px;
+  box-shadow: 5px 5px 10px rgb(0 0 0 / 0.1);
 }
 
-.media {
-  @include clearfix;
-  background-color: #eee;
+.main-tile {
+  @include box;
+  color: #333;
 }
 
-
-/* B.9 */
+/* listing B.9 */
 @mixin alert-variant($color, $bg-color) {
   padding: 0.3em 0.5em;
   border: 1px solid $color;
@@ -79,34 +67,32 @@ html {
 }
 
 .alert-info {
-  @include alert-variant(blue, lightblue)
+  @include alert-variant(blue, lightblue);
 }
 
 .alert-danger {
-  @include alert-variant(red, pink)
+  @include alert-variant(red, pink);
 }
 
-
-/* B.10 */
-.message {
+/* listing B.10 */
+%message {
   padding: 0.3em 0.5em;
   border-radius: 0.5em;
 }
 
 .message-info {
-  @extend .message;
+  @extend %message;
   color: blue;
   background-color: lightblue;
 }
 
 .message-danger {
-  @extend .message;
+  @extend %message;
   color: red;
   background-color: pink;
 }
 
-
-/* B.11 */
+/* listing B.11 */
 $green: #63a35c;
 
 $green-dark: darken($green, 10%);
@@ -118,8 +104,6 @@ $green-dull: desaturate($green, 20%);
 $purple: adjust-hue($green, 180deg);
 $teal: adjust-hue($green, 90deg);
 
-$green-transparent: rgba($green, 0.5);
-
 .colors {
   color: $green-dark;
   color: $green-light;
@@ -127,11 +111,9 @@ $green-transparent: rgba($green, 0.5);
   color: $green-dull;
   color: $purple;
   color: $teal;
-  color: $green-transparent;
 }
 
-
-/* B.12 */
+/* listing B.12 */
 @for $index from 2 to 5 {
   .nav-links > li:nth-child(#{$index}) {
     transition-delay: (0.1s * $index) - 0.1s;
