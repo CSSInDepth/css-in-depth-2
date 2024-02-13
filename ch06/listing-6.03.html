@@ -94,17 +94,15 @@
     </main>
 
     <script type="text/javascript">
-      var button = document.getElementById("open");
-      var close = document.getElementById("close");
-      var modal = document.getElementById("modal");
+      const button = document.getElementById("open");
+      const close = document.getElementById("close");
+      const modal = document.getElementById("modal");
 
       button.addEventListener("click", function (event) {
-        event.preventDefault();
         modal.classList.add("is-open");
       });
 
       close.addEventListener("click", function (event) {
-        event.preventDefault();
         modal.classList.remove("is-open");
       });
     </script>
