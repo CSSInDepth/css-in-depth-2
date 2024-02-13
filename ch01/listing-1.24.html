@@ -1,0 +1,98 @@
+<!doctype html>
+<head>
+  <meta charset="utf-8" />
+  <style>
+    body {
+      font-family: sans-serif;
+    }
+
+    a:link {
+      background-color: blue;
+      color: white;
+      text-decoration: none;
+      padding: 2px;
+    }
+
+    a:visited {
+      background-color: purple;
+    }
+
+    a:hover {
+      background-color: transparent;
+      color: blue;
+      text-decoration: underline;
+    }
+
+    a:active {
+      color: red;
+    }
+
+    h1 {
+      color: #2f4f4f;
+      margin-bottom: 10px;
+    }
+
+    .nav {
+      margin-top: 10px;
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .nav li {
+      display: inline-block;
+    }
+
+    .nav a {
+      color: white;
+      background-color: #13a4a4;
+      padding: 5px 15px;
+      border-radius: 2px;
+      text-decoration: none;
+    }
+
+    .nav .featured {
+      background-color: orange;
+    }
+
+    .footer {
+      color: #666;
+      background-color: #ccc;
+      padding: 15px 0;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    .footer a {
+      color: unset;
+      background-color: unset;
+      text-decoration: revert;
+    }
+  </style>
+</head>
+<body>
+  <header class="page-header">
+    <h1 id="page-title" class="title">Wombat Coffee Roasters</h1>
+    <nav>
+      <ul id="main-nav" class="nav">
+        <li><a href="/">Home</a></li>
+        <li><a href="/coffees">Coffees</a></li>
+        <li><a href="/brewers">Brewers</a></li>
+        <li><a href="/specials" class="featured">Specials</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <p>Try some of our newest coffees:</p>
+    <div class="coffees">
+      <a href="/coffees/costa-rica">Costa Rica</a>
+      <a href="/coffees/ethiopia">Ethiopia</a>
+      <a href="/coffees/guatamala">Guatemala</a>
+      <a href="/coffees/kenya">Kenya</a>
+      <a href="/coffees/mexico">Mexico</a>
+    </div>
+  </main>
+  <footer class="footer">
+    &copy; 2023 Wombat Coffee Roasters &mdash;
+    <a href="/terms-of-use">Terms of use</a>
+  </footer>
+</body>

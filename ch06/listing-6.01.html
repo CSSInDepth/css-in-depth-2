@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <style>
+      /* styles to be added in subsequent listings */
+    </style>
+  </head>
+
+  <body>
+    <header class="top-banner">
+      <div class="top-banner-inner">
+        <p>
+          Find out what's going on at Wombat Coffee each month. Sign up for our
+          newsletter:
+          <button id="open">Sign up</button>
+        </p>
+      </div>
+    </header>
+    <div class="modal" id="modal" role="dialog" aria-modal="true">
+      <div class="modal-backdrop"></div>
+      <div class="modal-body">
+        <button class="modal-close" id="close">close</button>
+        <h2>Wombat Newsletter</h2>
+        <p>Sign up for our monthly newsletter. No spam. We promise!</p>
+        <form>
+          <p>
+            <label for="email">Email address:</label>
+            <input type="text" name="email" />
+          </p>
+          <p><button type="submit">Submit</button></p>
+        </form>
+      </div>
+    </div>
+    <main class="container">
+      <h1>Wombat Coffee Roasters</h1>
+    </main>
+
+    <script type="text/javascript">
+      const button = document.getElementById("open");
+      const close = document.getElementById("close");
+      const modal = document.getElementById("modal");
+
+      button.addEventListener("click", function (event) {
+        event.preventDefault();
+        modal.classList.add("is-open");
+      });
+
+      close.addEventListener("click", function (event) {
+        event.preventDefault();
+        modal.classList.remove("is-open");
+      });
+    </script>
+  </body>
+</html>

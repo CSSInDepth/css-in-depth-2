@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <style>
+      body {
+        font-family: Helvetica, Arial, sans-serif;
+        min-height: 200vh;
+        margin: 0;
+      }
+
+      body.no-scroll {
+        overflow: hidden;
+      }
+
+      button,
+      input {
+        font: inherit;
+      }
+
+      button {
+        padding: 0.5em 0.7em;
+        border: 1px solid #8d8d8d;
+        background-color: #eee;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .top-banner {
+        padding: 0.5em;
+        background-color: #ffd698;
+        box-shadow: 0 1px 5px rgb(0 0 0 / 0.1);
+      }
+
+      .top-banner-inner {
+        width: 80%;
+        max-inline-size: 1000px;
+        margin-inline: auto;
+      }
+
+      .container {
+        width: 80%;
+        max-inline-size: 1000px;
+        margin-inline: auto;
+      }
+
+      .modal {
+        display: none;
+      }
+
+      .modal.is-open {
+        display: block;
+      }
+
+      .modal-backdrop {
+        position: fixed;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+
+      .modal-body {
+        position: fixed;
+        inset-block: 3em;
+        inset-inline: 20%;
+        padding: 2em 3em;
+        background-color: white;
+        overflow: auto;
+      }
+
+      .modal-close {
+        position: absolute;
+        top: 0.3em;
+        right: 0.3em;
+        padding: 0.3em;
+        border: 0;
+        cursor: pointer;
+        font-size: 2em;
+        height: 1em;
+        width: 1em;
+        text-indent: 10em;
+        overflow: hidden;
+        background-color: transparent;
+      }
+
+      .modal-close::after {
+        position: absolute;
+        line-height: 0.5;
+        top: 0.2em;
+        left: 0.1em;
+        text-indent: 0;
+        content: "\00D7";
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="top-banner">
+      <div class="top-banner-inner">
+        <p>
+          Find out what's going on at Wombat Coffee each month. Sign up for our
+          newsletter:
+          <button id="open">Sign up</button>
+        </p>
+      </div>
+    </header>
+    <div class="modal" id="modal" role="dialog" aria-modal="true">
+      <div class="modal-backdrop"></div>
+      <div class="modal-body">
+        <button class="modal-close" id="close">close</button>
+        <h2>Wombat Newsletter</h2>
+        <p>Sign up for our monthly newsletter. No spam. We promise!</p>
+        <form>
+          <p>
+            <label for="email">Email address:</label>
+            <input type="text" name="email" />
+          </p>
+          <p><button type="submit">Submit</button></p>
+        </form>
+      </div>
+    </div>
+    <main class="container">
+      <nav>
+        <div class="dropdown" id="dropdown">
+          <button type="button" class="dropdown-toggle" id="dropdown-toggle">
+            Main Menu
+          </button>
+          <div class="dropdown-menu">
+            <ul class="submenu">
+              <li><a href="/">Home</a></li>
+              <li><a href="/coffees">Coffees</a></li>
+              <li><a href="/brewers">Brewers</a></li>
+              <li><a href="/specials">Specials</a></li>
+              <li><a href="/about">About us</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <h1>Wombat Coffee Roasters</h1>
+    </main>
+
+    <script type="text/javascript">
+      const button = document.getElementById("open");
+      const close = document.getElementById("close");
+      const modal = document.getElementById("modal");
+
+      button.addEventListener("click", function (event) {
+        modal.classList.add("is-open");
+        document.body.classList.add("no-scroll");
+      });
+
+      close.addEventListener("click", function (event) {
+        modal.classList.remove("is-open");
+        document.body.classList.remove("no-scroll");
+      });
+    </script>
+  </body>
+</html>
