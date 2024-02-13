@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      @layer reset, global, modules;
+
+      @layer reset {
+        *,
+        *::before,
+        *::after {
+          box-sizing: border-box;
+        }
+
+        body {
+          margin: unset;
+        }
+
+        button,
+        input,
+        textarea,
+        select {
+          font: inherit;
+        }
+
+        img,
+        picture,
+        svg,
+        canvas {
+          display: block;
+          max-width: 100%;
+          height: auto;
+        }
+      }
+
+      @layer global {
+        body {
+          font-family: Helvetica, Arial, sans-serif;
+        }
+      }
+
+      /* module styles to be added in next listing */
+    </style>
+  </head>
+
+  <body>
+    <div class="message">Save successful</div>
+  </body>
+</html>

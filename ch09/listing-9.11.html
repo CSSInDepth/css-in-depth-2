@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      @layer reset, global, modules;
+
+      @layer reset {
+        *,
+        *::before,
+        *::after {
+          box-sizing: border-box;
+        }
+
+        body {
+          margin: unset;
+        }
+
+        button,
+        input,
+        textarea,
+        select {
+          font: inherit;
+        }
+
+        img,
+        picture,
+        svg,
+        canvas {
+          display: block;
+          max-width: 100%;
+          height: auto;
+        }
+      }
+
+      @layer global {
+        body {
+          font-family: Helvetica, Arial, sans-serif;
+        }
+      }
+
+      /* dropdown styles to be added in next listing */
+    </style>
+  </head>
+
+  <body>
+    <div class="dropdown">
+      <button class="dropdown__toggle">Main Menu</button>
+      <div class="dropdown__drawer">
+        <ul class="menu">
+          <li><a href="/">Home</a></li>
+          <li><a href="/coffees">Coffees</a></li>
+          <li><a href="/brewers">Brewers</a></li>
+          <li><a href="/specials">Specials</a></li>
+          <li><a href="/about">About us</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <script type="module">
+      var toggle = document.querySelector(".dropdown__toggle");
+      toggle.addEventListener("click", function (event) {
+        event.preventDefault();
+        var dropdown = event.target.parentNode;
+        dropdown.classList.toggle("is-open");
+      });
+    </script>
+  </body>
+</html>
