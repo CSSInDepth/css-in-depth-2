@@ -2,7 +2,7 @@
 <html lang="en-US">
   <head>
     <style>
-      @layer reset, theme, global, layout, modules, utilities, state;
+      @layer reset, theme, global, layout, modules, utilities;
 
       @layer reset {
         *,
@@ -55,41 +55,6 @@
 
           accent-color: var(--brand-color);
           color-scheme: light;
-        }
-      }
-
-      @layer global {
-        :root {
-          font-size: clamp(1rem, 0.4rem + 0.8svw, 1.2rem);
-        }
-
-        body {
-          font-family: var(--font-main);
-          background-color: var(--background-color-1);
-          color: var(--foreground-color-2);
-        }
-
-        a:any-link {
-          color: var(--brand-color);
-        }
-
-        h1 {
-          font-family: var(--font-heading);
-          font-size: 2.2rem;
-        }
-
-        h2 {
-          font-size: 1.125rem;
-        }
-
-        @media (min-width: 768px) {
-          h1 {
-            font-size: 3rem;
-          }
-
-          h2 {
-            font-size: 2rem;
-          }
         }
       }
     </style>

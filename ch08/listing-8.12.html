@@ -2,35 +2,27 @@
 <html lang="en-US">
   <head>
     <style>
-      body {
-        background-color: #eee;
+      :root {
+        --brand-blue: #0063cc;
       }
 
-      .card {
-        padding: 1rem;
-        border-radius: 0.5rem;
-        background-color: #fff;
+      a:where(:any-link) {
+        color: var(--brand-blue);
+        font-weight: bold;
       }
 
-      .card > h3 {
-        margin-block: 0;
-        border-block-end: 1px solid #eee;
-      }
-
-      .card .card-body {
-        padding-block: 1em;
+      .button {
+        display: inline-block;
+        padding: 0.5rem;
+        color: white;
+        background-color: var(--brand-blue);
+        font-weight: normal;
+        text-decoration: none;
       }
     </style>
   </head>
   <body>
-    <div class="card">
-      <h3>Sir Arthur Ignatius Conan Doyle</h3>
-      <div class="card-body">
-        <p>
-          A British writer and physician who created the fictional detective
-          Sherlock Holmes.
-        </p>
-      </div>
-    </div>
+    <p><a href="#">normal link</a></p>
+    <p><a href="#" class="button">Button link</a></p>
   </body>
 </html>

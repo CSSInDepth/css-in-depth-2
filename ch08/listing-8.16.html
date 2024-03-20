@@ -3,25 +3,30 @@
   <head>
     <meta charset="utf-8" />
     <style>
-      :root {
-        --font-heading: Georgia, sans-serif;
+      body {
+        background-color: #eee;
       }
 
-      h1 {
-        font-family: var(--font-heading);
-        font-size: 2.2rem;
+      .card {
+        padding: 1rem;
+        border-radius: 0.5rem;
+        background-color: #fff;
 
-        @media (min-width: 800px) {
-          font-size: 2.6rem;
-        }
-
-        @media (min-width: 1200px) {
-          font-size: 3rem;
+        .homepage & {
+          background-color: #ccc;
         }
       }
     </style>
   </head>
   <body class="homepage">
-    <h1>Example heading</h1>
+    <div class="card">
+      <h3>Sir Arthur Ignatius Conan Doyle</h3>
+      <div class="card-body">
+        <p>
+          A British writer and physician who created the fictional detective
+          Sherlock Holmes.
+        </p>
+      </div>
+    </div>
   </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="en-US">
   <head>
     <style>
-      @layer reset, theme, global, layout, modules, utilities, state;
+      @layer reset, theme, global, layout, modules, utilities;
 
       @layer reset {
         *,
@@ -42,27 +42,9 @@
           }
         }
       }
-
-      @layer theme {
-        :root {
-          --brand-color: #0063cc;
-          --background-color-1: #edf3fa;
-          --background-color-2: #c6cdd5;
-          --foreground-color-1: #39434d;
-          --foreground-color-2: #5a636d;
-          --font-main: "Helvetica Neue", "Nimbus Sans", Arial, sans-serif;
-          --font-heading: Georgia, sans-serif;
-
-          accent-color: var(--brand-color);
-          color-scheme: light;
-        }
-      }
     </style>
   </head>
   <body>
     <h1>Example heading</h1>
-    <form>
-      <label><input type="checkbox" /> A checkbox with the accent color</label>
-    </form>
   </body>
 </html>

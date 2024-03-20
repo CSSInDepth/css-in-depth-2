@@ -2,27 +2,196 @@
 <html lang="en-US">
   <head>
     <style>
-      :root {
-        --brand-blue: #0063cc;
+      @layer reset, theme, global, layout, modules, utilities, state;
+
+      @layer reset {
+        *,
+        *::before,
+        *::after {
+          box-sizing: border-box;
+        }
+
+        body {
+          margin: unset;
+        }
+
+        button,
+        input,
+        textarea,
+        select {
+          font: inherit;
+        }
+
+        img,
+        picture,
+        svg,
+        canvas {
+          display: block;
+          max-width: 100%;
+          height: auto;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          *,
+          *::before,
+          *::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+            scroll-behavior: auto !important;
+          }
+        }
       }
 
-      a:where(:any-link) {
-        color: var(--brand-blue);
-        font-weight: bold;
+      @layer theme {
+        :root {
+          --brand-color: #0063cc;
+          --background-color-1: #edf3fa;
+          --background-color-2: #c6cdd5;
+          --foreground-color-1: #39434d;
+          --foreground-color-2: #5a636d;
+          --font-main: "Helvetica Neue", "Nimbus Sans", Arial, sans-serif;
+          --font-heading: Georgia, sans-serif;
+
+          accent-color: var(--brand-color);
+          color-scheme: light;
+        }
       }
 
-      .button {
-        display: inline-block;
-        padding: 0.5rem;
-        color: white;
-        background-color: var(--brand-blue);
-        font-weight: normal;
-        text-decoration: none;
+      @layer global {
+        :root {
+          font-size: clamp(1rem, 0.4rem + 0.8svw, 1.2rem);
+        }
+
+        body {
+          font-family: var(--font-main);
+          background-color: var(--background-color-1);
+          color: var(--foreground-color-2);
+        }
+
+        a:any-link {
+          color: var(--brand-color);
+        }
+
+        h1 {
+          font-family: var(--font-heading);
+          font-size: 2.2rem;
+        }
+
+        h2 {
+          font-size: 1.125rem;
+        }
+
+        @media (min-width: 768px) {
+          h1 {
+            font-size: 3rem;
+          }
+
+          h2 {
+            font-size: 2rem;
+          }
+        }
+      }
+
+      @layer layout {
+        #homepage {
+          display: grid;
+          grid-template-areas:
+            "header header"
+            "main sidebar"
+            "footer footer";
+          grid-template-columns: 1fr 300px;
+          gap: 1rem;
+        }
+
+        #homepage > header,
+        #homepage > footer {
+          grid-column: span 2;
+        }
+
+        #article > main {
+          max-inline-size: 1000px;
+          margin-inline: auto;
+        }
+      }
+
+      @layer modules {
+        .nav-menu {
+          margin-block: unset;
+          padding-inline-start: unset;
+          border: 1px solid #ccc;
+          list-style: none;
+        }
+
+        .nav-menu > li + li {
+          border-top: 1px solid #ccc;
+        }
+
+        .nav-menu > li > a {
+          display: block;
+          padding: 0.8em 1em;
+          color: inherit;
+          font-weight: normal;
+        }
+
+        .nav-menu > li > a:hover {
+          color: var(--brand-color);
+          background-color: white;
+        }
+
+        .card {
+          padding: 1rem;
+          border-radius: 0.5rem;
+          background-color: #fff;
+        }
+
+        .card > h3 {
+          align-self: end;
+          margin-block: 0;
+          padding-block-end: 0.5rem;
+          border-block-end: 1px solid #eee;
+        }
+      }
+
+      @layer utilities {
+        .text-center {
+          text-align: center;
+        }
+
+        .hidden {
+          display: none;
+        }
+
+        .border-radius {
+          border-radius: 1rem;
+        }
       }
     </style>
   </head>
-  <body>
-    <p><a href="#">normal link</a></p>
-    <p><a href="#" class="button">Button link</a></p>
+  <body id="homepage">
+    <header id="page-header">
+      <h1>Example heading</h1>
+    </header>
+    <main class="l-main">
+      <div class="card">
+        <h3>Mark Twain</h3>
+        <div>
+          <p>
+            An American author famous for
+            <i>The Adventures of Tom Sawyer</i> and
+            <i>Adventures of Huckleberry Finn</i>. He has been called “the
+            father of American literature.”
+          </p>
+        </div>
+      </div>
+    </main>
+    <aside>
+      <ul class="nav-menu">
+        <li><a href="/">Home</a></li>
+        <li><a href="/authors">Authors</a></li>
+        <li><a href="/about">About</a></li>
+      </ul>
+    </aside>
+    <footer class="text-center">Footer content</footer>
   </body>
 </html>

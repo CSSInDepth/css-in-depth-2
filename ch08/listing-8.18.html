@@ -3,16 +3,27 @@
   <head>
     <meta charset="utf-8" />
     <style>
-      h1 {
-        @media (min-width: 800px) {
-          font-size: 2.6rem;
+      input {
+        @layer base {
+          font: inherit;
+          border: 2px solid #999;
         }
 
-        font-size: 2.2rem;
+        @layer modules {
+          padding: 5px 10px;
+
+          @supports selector(:user-invalid) {
+            border-color: green;
+
+            &:user-invalid {
+              border-color: red;
+            }
+          }
+        }
       }
     </style>
   </head>
   <body class="homepage">
-    <h1>Example heading</h1>
+    <input type="input" required />
   </body>
 </html>

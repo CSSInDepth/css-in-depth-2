@@ -92,38 +92,9 @@
           }
         }
       }
-
-      @layer layout {
-        #homepage {
-          display: grid;
-          grid-template-areas:
-            "header header"
-            "main sidebar"
-            "footer footer";
-          grid-template-columns: 1fr 300px;
-          gap: 1rem;
-        }
-
-        #homepage > header,
-        #homepage > footer {
-          grid-column: span 2;
-        }
-
-        #article > main {
-          max-inline-size: 1000px;
-          margin-inline: auto;
-        }
-      }
     </style>
   </head>
-  <body id="homepage">
-    <header id="page-header">
-      <h1>Example heading</h1>
-    </header>
-    <main class="l-main">
-      <p>Main page contents</p>
-    </main>
-    <aside>Sidebar content</aside>
-    <footer>Footer content</footer>
+  <body>
+    <h1>Example heading</h1>
   </body>
 </html>
