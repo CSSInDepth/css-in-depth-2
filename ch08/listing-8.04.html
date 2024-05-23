@@ -2,35 +2,7 @@
 <html lang="en-US">
   <head>
     <style>
-      @layer reset, theme, global, layout, modules, utilities;
-
       @layer reset {
-        *,
-        *::before,
-        *::after {
-          box-sizing: border-box;
-        }
-
-        body {
-          margin: unset;
-        }
-
-        button,
-        input,
-        textarea,
-        select {
-          font: inherit;
-        }
-
-        img,
-        picture,
-        svg,
-        canvas {
-          display: block;
-          max-width: 100%;
-          height: auto;
-        }
-
         @media (prefers-reduced-motion: reduce) {
           *,
           *::before,
